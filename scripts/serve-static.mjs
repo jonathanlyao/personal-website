@@ -2,7 +2,7 @@ import { createServer } from "node:http";
 import { readFile, stat } from "node:fs/promises";
 import { extname, resolve } from "node:path";
 
-const outputDirectory = resolve("dist");
+const outputDirectory = resolve("dist/client");
 const portIndex = process.argv.indexOf("--port");
 const hostIndex = process.argv.indexOf("--hostname");
 const port = Number(process.env.PORT ?? process.argv[portIndex + 1] ?? 3000);
