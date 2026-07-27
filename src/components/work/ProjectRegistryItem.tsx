@@ -14,6 +14,7 @@ export function ProjectRegistryItem({
   return (
     <li className="project-registry__item">
       <article
+        id={project.slug}
         className="registry-project"
         aria-labelledby={`work-project-${project.slug}`}
       >
@@ -85,7 +86,7 @@ export function ProjectRegistryItem({
                 href={project.caseStudyUrl}
                 variant="secondary"
               >
-                Open Case Study
+                View Case Study
                 <span className="visually-hidden"> for {project.title}</span>
               </EditorialButton>
             ) : null}

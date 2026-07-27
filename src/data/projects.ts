@@ -34,6 +34,7 @@ export const portfolioProjects: readonly PortfolioProject[] = [
       "SQL",
       "Docker",
     ],
+    caseStudyUrl: "/work/sec-financial-data-platform",
     displayOrder: 1,
     homepage: {
       number: "01",

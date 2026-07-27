@@ -19,7 +19,10 @@ export function NavigationLink({
   const resolvedHref =
     href.startsWith("#") && !isHomepage ? `/${href}` : href;
   const isRouteLink = href.startsWith("/") && !href.includes("#");
-  const isActive = isRouteLink && pathname === href;
+  const isActive =
+    isRouteLink &&
+    (pathname === href ||
+      (href !== "/" && pathname.startsWith(`${href}/`)));
 
   return (
     <Link
