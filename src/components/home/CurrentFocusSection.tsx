@@ -20,7 +20,7 @@ export function CurrentFocusSection() {
         <ol className="focus-ledger">
           {currentFocus.map((entry) => (
             <li key={entry.number}>
-              <div className="focus-ledger__topline">
+              <div className="focus-ledger__metadata">
                 <span className="focus-ledger__number">{entry.number}</span>
                 <StatusLabel>{entry.status}</StatusLabel>
               </div>

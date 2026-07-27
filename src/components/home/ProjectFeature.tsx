@@ -1,8 +1,17 @@
 import { ProjectArchitectureDiagram } from "@/components/diagrams/ProjectArchitectureDiagram";
+import { EditorialButton } from "@/components/ui/EditorialButton";
 import { TechnicalTag } from "@/components/ui/TechnicalTag";
 import type { Project } from "@/types/content";
 
 export function ProjectFeature({ project }: { project: Project }) {
+  const projectAction = project.githubUrl ? (
+    <div className="project-feature__actions">
+      <EditorialButton href={project.githubUrl} variant="light" external>
+        View on GitHub
+      </EditorialButton>
+    </div>
+  ) : null;
+
   return (
     <article
       className={`project-feature project-feature--${project.layout}`}
@@ -24,15 +33,13 @@ export function ProjectFeature({ project }: { project: Project }) {
             <TechnicalTag key={tag}>{tag}</TechnicalTag>
           ))}
         </div>
-        <div className="project-feature__footer">
-          <ul aria-label={`${project.title} case study sections`}>
-            {project.navigation.map((label) => (
-              <li key={label}>{label}</li>
-            ))}
-          </ul>
-        </div>
+        <p className="project-feature__focus">
+          <span>Focus:</span> {project.focusAreas.join(" · ")}
+        </p>
+        {project.layout === "reverse" ? projectAction : null}
       </div>
       <ProjectArchitectureDiagram project={project} />
+      {project.layout !== "reverse" ? projectAction : null}
     </article>
   );
 }

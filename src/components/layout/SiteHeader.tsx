@@ -1,19 +1,28 @@
+import Link from "next/link";
 import { navigation, siteConfig } from "@/data/site";
 import { MobileNavigation } from "./MobileNavigation";
+import { NavigationLink } from "./NavigationLink";
 
 export function SiteHeader() {
   return (
     <header className="site-header">
       <div className="site-header__inner">
-        <a className="site-identity" href="#top" aria-label="Jonathan Lee, home">
+        <Link
+          className="site-identity"
+          href="/"
+          aria-label={`${siteConfig.name}, home`}
+        >
           <strong>{siteConfig.name}</strong>
-          <span>{siteConfig.title}</span>
-        </a>
+          <span className="site-identity__title-full">{siteConfig.title}</span>
+          <span className="site-identity__title-mobile">
+            {siteConfig.mobileTitle}
+          </span>
+        </Link>
         <nav className="desktop-navigation" aria-label="Primary navigation">
           <ul>
             {navigation.map((item) => (
               <li key={item.label}>
-                <a href={item.href}>{item.label}</a>
+                <NavigationLink href={item.href}>{item.label}</NavigationLink>
               </li>
             ))}
           </ul>

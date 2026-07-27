@@ -1,4 +1,5 @@
 import { siteConfig } from "@/data/site";
+import { TechnicalIcon } from "@/components/ui/TechnicalIcon";
 
 export function SiteFooter() {
   return (
@@ -10,7 +11,7 @@ export function SiteFooter() {
         </div>
         <p>Built with Next.js</p>
         <a className="back-to-top" href="#top" aria-label="Back to top">
-          <span aria-hidden="true">↑</span>
+          <TechnicalIcon name="arrow-up" size={18} />
         </a>
       </div>
     </footer>

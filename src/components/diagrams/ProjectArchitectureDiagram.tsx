@@ -20,6 +20,9 @@ export function ProjectArchitectureDiagram({
           .map((stage) => stage.title)
           .join(" to ")}. ${project.qualityLabel}.`}
       >
+        <span className="architecture-flow__hint" aria-hidden="true">
+          Swipe to explore
+        </span>
         <div className="architecture-flow__track">
           {project.flow.map((stage, index) => (
             <div className="architecture-flow__unit" key={`${stage.title}-${index}`}>

@@ -9,7 +9,7 @@ export function ContactSection() {
       id="contact"
       aria-labelledby="contact-heading"
     >
-      <SectionHeading number="06" label="Let’s Connect" inverted />
+      <SectionHeading number="07" label="Let’s Connect" inverted />
       <div className="section-content contact-section__content">
         <div className="contact-section__lead">
           <p className="eyebrow">OPEN CHANNEL / NEW YORK</p>
@@ -21,7 +21,12 @@ export function ContactSection() {
         <ul className="contact-methods">
           {contactMethods.map((method) => (
             <li key={method.label}>
-              <a href={method.href} target="_blank" rel="noreferrer">
+              <a
+                href={method.href}
+                {...(method.external
+                  ? { target: "_blank", rel: "noopener noreferrer" }
+                  : {})}
+              >
                 <ContactMethodContent method={method} />
               </a>
             </li>
@@ -39,12 +44,20 @@ function ContactMethodContent({
 }) {
   return (
     <>
-      <TechnicalIcon name={method.icon} size={27} />
+      <span className="technical-icon-frame technical-icon-frame--contact">
+        <TechnicalIcon name={method.icon} size={25} />
+      </span>
       <span>
         <strong>{method.label}</strong>
         <small>{method.value}</small>
       </span>
-      <span aria-hidden="true">↗</span>
+      <TechnicalIcon
+        name={method.external ? "external-link" : "arrow-right"}
+        size={17}
+      />
+      {method.external ? (
+        <span className="visually-hidden">Opens in a new tab</span>
+      ) : null}
     </>
   );
 }

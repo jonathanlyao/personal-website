@@ -40,6 +40,31 @@ createServer(async (request, response) => {
     });
     response.end(request.method === "HEAD" ? undefined : body);
   } catch {
+    try {
+      const pathname = decodeURIComponent(
+        new URL(request.url ?? "/", `http://${hostname}`).pathname,
+      );
+      const isExtensionless = !pathname.split("/").at(-1)?.includes(".");
+
+      if (isExtensionless) {
+        const htmlPath = resolve(
+          outputDirectory,
+          `.${pathname.replace(/\/$/, "") || "/index"}.html`,
+        );
+
+        if (htmlPath.startsWith(outputDirectory)) {
+          const body = await readFile(htmlPath);
+          response.writeHead(200, {
+            "Content-Type": contentTypes[".html"],
+          });
+          response.end(request.method === "HEAD" ? undefined : body);
+          return;
+        }
+      }
+    } catch {
+      // Fall through to the exported 404 page.
+    }
+
     const body = await readFile(resolve(outputDirectory, "404.html"));
     response.writeHead(404, { "Content-Type": contentTypes[".html"] });
     response.end(request.method === "HEAD" ? undefined : body);

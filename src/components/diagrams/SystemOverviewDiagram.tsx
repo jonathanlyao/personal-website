@@ -10,7 +10,11 @@ export function SystemOverviewDiagram() {
       tone="dark"
       className="system-overview"
     >
-      <div className="system-flow">
+      <div
+        className="system-flow"
+        role="img"
+        aria-label="Data system overview: Sources to Ingestion to Warehouse to Modeling to Quality to Decisions."
+      >
         {systemStages.map((stage, index) => (
           <div className="system-flow__unit" key={stage.title}>
             <div className="system-flow__node">

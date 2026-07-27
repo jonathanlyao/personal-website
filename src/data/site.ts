@@ -2,14 +2,16 @@ import type {
   AboutFact,
   ContactMethod,
   FocusEntry,
+  LabProject,
   LabWorkflowStep,
   NavItem,
   SystemStage,
 } from "@/types/content";
 
 export const siteConfig = {
-  name: "Jonathan Lee",
+  name: "Lee Yao",
   title: "Data Engineer & Analytics Systems Builder",
+  mobileTitle: "Data Engineer",
   headline:
     "I build reliable data systems that turn fragmented information into usable decisions.",
   supportingCopy:
@@ -23,10 +25,33 @@ export const siteConfig = {
 export const navigation: readonly NavItem[] = [
   { label: "Work", href: "#selected-work" },
   { label: "Lab", href: "#lab" },
+  { label: "Writing", href: "/writing" },
   { label: "About", href: "#about" },
-  { label: "Resume", href: "#contact" },
+  { label: "Resume", href: "/resume" },
   { label: "Contact", href: "#contact" },
 ];
+
+export const profileLinks = {
+  email: "LeeYao.us@gmail.com",
+  emailHref: "mailto:LeeYao.us@gmail.com",
+  linkedIn: "https://www.linkedin.com/in/leeyaodatafan/",
+  github: "https://github.com/jonathanlyao",
+} as const;
+
+export const externalResources = {
+  githubProfile: profileLinks.github,
+  linkedIn: profileLinks.linkedIn,
+  cmsRepository:
+    "https://github.com/jonathanlyao/CMS-Medicare-Data-Pipeline-Kafka-Spark-Airflow",
+  flightsRepository:
+    "https://github.com/jonathanlyao/US-DOT-Flights-End-to-End-Data-Engineering-Pipeline",
+  taxiRepository:
+    "https://github.com/jonathanlyao/NYC-Yellow-Taxi-Q1-2019_Analytics/tree/main",
+  olistRepository:
+    "https://github.com/jonathanlyao/Olist-E-Commerce-Supply-Chain-AI-Reviews-Intelligence",
+  microsoftCertification:
+    "https://learn.microsoft.com/api/credentials/share/en-us/LeeYao-0069/B073B9E0F298FD6A?sharingId=AD929D52BA42BB13",
+} as const;
 
 export const systemStages: readonly SystemStage[] = [
   {
@@ -67,7 +92,7 @@ export const currentFocus: readonly FocusEntry[] = [
     title: "SEC Financial Data Platform",
     status: "In Development",
     description:
-      "Quarterly SEC filings transformed into validated, modeled, and monitored financial datasets.",
+      "Quarterly SEC filing data transformed into validated, modeled, and monitored financial datasets.",
   },
   {
     number: "02",
@@ -81,7 +106,7 @@ export const currentFocus: readonly FocusEntry[] = [
     title: "Snowflake Engineering Practice",
     status: "Current Study",
     description:
-      "Deepening platform knowledge and preparing for the SnowPro Core certification.",
+      "Deepening Snowflake platform knowledge and preparing for the SnowPro Core certification.",
   },
 ];
 
@@ -108,18 +133,52 @@ export const labWorkflow: readonly LabWorkflowStep[] = [
   },
 ];
 
+export const labProject: LabProject = {
+  description:
+    "A local-first job-search workflow for importing job descriptions, reviewing duplicates, scoring role fit against stored evidence, and tracking applications.",
+  supportingStatement:
+    "Human review remains part of every decision. The system does not automatically submit job applications.",
+};
+
+export const aboutCopy = {
+  primary:
+    "I’m a New York–based data professional focused on building reliable data platforms, analytics systems, and practical internal tools. My work connects data engineering with business context through pipeline design, dimensional modeling, data-quality controls, orchestration, and decision-ready reporting.",
+  secondary:
+    "I also co-founded Solvia One, where I apply data and software engineering to operational, product, pricing, and commercial workflows.",
+} as const;
+
 export const aboutFacts: readonly AboutFact[] = [
   { label: "Based in New York", icon: "location" },
-  { label: "Co-founder, Solvia One", icon: "building" },
-  { label: "Data Engineering & Analytics Systems", icon: "data" },
-  { label: "Continuous Builder & Learner", icon: "learn" },
+  {
+    label: "Co-founder and Data Platform Engineer, Solvia One",
+    icon: "building",
+  },
+  { label: "Data Engineering and Analytics Systems", icon: "data" },
+  {
+    label: "Current Focus: Snowflake, dbt, Orchestration, and Data Quality",
+    icon: "focus",
+  },
 ];
 
 export const contactMethods: readonly ContactMethod[] = [
   {
+    label: "Email",
+    value: profileLinks.email,
+    href: profileLinks.emailHref,
+    icon: "email",
+  },
+  {
+    label: "LinkedIn",
+    value: "linkedin.com/in/leeyaodatafan",
+    href: profileLinks.linkedIn,
+    icon: "linkedin",
+    external: true,
+  },
+  {
     label: "GitHub",
     value: "github.com/jonathanlyao",
-    href: "https://github.com/jonathanlyao",
+    href: profileLinks.github,
     icon: "github",
+    external: true,
   },
 ];

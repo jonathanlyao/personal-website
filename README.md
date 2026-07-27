@@ -1,6 +1,6 @@
-# Jonathan Lee — Personal Website
+# Lee Yao — Personal Website
 
-Phase 1 of Jonathan Lee’s professional website, built around the **Editorial
+Phase 1 of Lee Yao’s professional website, built around the **Editorial
 Data Systems** direction. The homepage presents data engineering work through
 editorial hierarchy, architecture figures, technical labels, and structured
 project evidence.

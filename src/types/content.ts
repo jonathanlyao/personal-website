@@ -3,11 +3,30 @@ export type NavItem = {
   href: string;
 };
 
+export type WritingPlatform = "DEV Community" | "LinkedIn";
+
+export type WritingContentType = "Article" | "LinkedIn Note";
+
+export type WritingItem = {
+  id: string;
+  slug?: string;
+  title: string;
+  summary: string;
+  topics: readonly string[];
+  platform: WritingPlatform;
+  contentType: WritingContentType;
+  publishedAt?: string;
+  url: string;
+  discussionUrl?: string;
+  featured: boolean;
+};
+
 export type ContactMethod = {
   label: string;
   value: string;
   href: string;
   icon: "email" | "linkedin" | "github" | "document";
+  external?: boolean;
 };
 
 export type FocusEntry = {
@@ -35,6 +54,11 @@ export type LabWorkflowStep = {
   icon: "import" | "inbox" | "score" | "track";
 };
 
+export type LabProject = {
+  description: string;
+  supportingStatement: string;
+};
+
 export type Project = {
   number: string;
   title: string;
@@ -42,7 +66,7 @@ export type Project = {
   date: string;
   summary: string;
   tags: readonly string[];
-  navigation: readonly string[];
+  focusAreas: readonly string[];
   flow: readonly {
     title: string;
     detail?: string;
@@ -53,9 +77,11 @@ export type Project = {
   figureTitle: string;
   layout: "standard" | "reverse" | "stacked";
   tone: "dark" | "paper" | "teal";
+  githubUrl?: string;
+  caseStudyUrl?: string;
 };
 
 export type AboutFact = {
   label: string;
-  icon: "location" | "building" | "data" | "learn";
+  icon: "location" | "building" | "data" | "focus";
 };

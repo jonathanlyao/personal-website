@@ -1,6 +1,7 @@
 import { LabWorkflowDiagram } from "@/components/diagrams/LabWorkflowDiagram";
 import { FigureFrame } from "@/components/ui/FigureFrame";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { labProject } from "@/data/site";
 import { JobSearchInterface } from "./JobSearchInterface";
 
 export function LabFeatureSection() {
@@ -15,9 +16,7 @@ export function LabFeatureSection() {
         <div className="lab-feature__lead">
           <p className="eyebrow">LOCAL-FIRST WORKFLOW / HUMAN REVIEW</p>
           <h2 id="lab-heading">Job Search OS</h2>
-          <p>
-            A local-first application that streamlines the job search workflow.
-          </p>
+          <p>{labProject.description}</p>
         </div>
         <div className="lab-feature__grid">
           <FigureFrame
@@ -28,12 +27,8 @@ export function LabFeatureSection() {
             <JobSearchInterface />
           </FigureFrame>
           <div className="lab-feature__workflow">
-            <h3>One workflow, reviewed by a person.</h3>
-            <p>
-              Jobs enter a local inbox, duplicates are reviewed, fit is scored
-              against stored evidence, and application progress stays visible.
-              The system does not submit applications automatically.
-            </p>
+            <h3>One workflow, with human review at every step.</h3>
+            <p>{labProject.supportingStatement}</p>
             <LabWorkflowDiagram />
           </div>
         </div>

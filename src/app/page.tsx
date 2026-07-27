@@ -1,6 +1,7 @@
 import { AboutPreviewSection } from "@/components/home/AboutPreviewSection";
 import { ContactSection } from "@/components/home/ContactSection";
 import { CurrentFocusSection } from "@/components/home/CurrentFocusSection";
+import { EngineeringNotesSection } from "@/components/home/EngineeringNotesSection";
 import { HeroSection } from "@/components/home/HeroSection";
 import { LabFeatureSection } from "@/components/home/LabFeatureSection";
 import { SelectedWorkSection } from "@/components/home/SelectedWorkSection";
@@ -12,6 +13,7 @@ export default function Home() {
       <CurrentFocusSection />
       <SelectedWorkSection />
       <LabFeatureSection />
+      <EngineeringNotesSection />
       <AboutPreviewSection />
       <ContactSection />
     </main>

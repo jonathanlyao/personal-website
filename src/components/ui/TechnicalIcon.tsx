@@ -1,4 +1,4 @@
-type IconName =
+export type IconName =
   | "source"
   | "ingest"
   | "warehouse"
@@ -12,18 +12,23 @@ type IconName =
   | "location"
   | "building"
   | "data"
-  | "learn"
+  | "focus"
   | "email"
   | "linkedin"
   | "github"
-  | "document";
+  | "document"
+  | "arrow-right"
+  | "arrow-up"
+  | "external-link";
 
 export function TechnicalIcon({
   name,
   size = 24,
+  className,
 }: {
   name: IconName;
   size?: number;
+  className?: string;
 }) {
   const common = {
     width: size,
@@ -35,6 +40,7 @@ export function TechnicalIcon({
     strokeLinecap: "round" as const,
     strokeLinejoin: "round" as const,
     "aria-hidden": true,
+    className,
   };
 
   const paths: Record<IconName, React.ReactNode> = {
@@ -116,10 +122,11 @@ export function TechnicalIcon({
         <path d="M4 5v7c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12v7c0 1.7 3.6 3 8 3s8-1.3 8-3v-7" />
       </>
     ),
-    learn: (
+    focus: (
       <>
-        <path d="M9 18h6M10 22h4" />
-        <path d="M8.5 15.5A7 7 0 1 1 15.5 15.5c-1 .8-1.5 1.5-1.5 2.5h-4c0-1-.5-1.7-1.5-2.5Z" />
+        <circle cx="12" cy="12" r="8" />
+        <circle cx="12" cy="12" r="3" />
+        <path d="M12 2v3M12 19v3M2 12h3M19 12h3" />
       </>
     ),
     email: (
@@ -143,6 +150,14 @@ export function TechnicalIcon({
       <>
         <path d="M6 2h8l4 4v16H6V2Z" />
         <path d="M14 2v5h5M9 12h6M9 16h6" />
+      </>
+    ),
+    "arrow-right": <path d="M5 12h14M14 7l5 5-5 5" />,
+    "arrow-up": <path d="M12 19V5M7 10l5-5 5 5" />,
+    "external-link": (
+      <>
+        <path d="M14 5h5v5M11 13l8-8" />
+        <path d="M19 13v6H5V5h6" />
       </>
     ),
   };
