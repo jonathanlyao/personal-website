@@ -21,25 +21,12 @@ export function ContactSection() {
         <ul className="contact-methods">
           {contactMethods.map((method) => (
             <li key={method.label}>
-              {method.href ? (
-                <a href={method.href}>
-                  <ContactMethodContent method={method} />
-                </a>
-              ) : (
-                <span
-                  className="contact-methods__placeholder"
-                  aria-label={`${method.label}: ${method.value}`}
-                >
-                  <ContactMethodContent method={method} />
-                </span>
-              )}
+              <a href={method.href} target="_blank" rel="noreferrer">
+                <ContactMethodContent method={method} />
+              </a>
             </li>
           ))}
         </ul>
-        <p className="contact-section__note">
-          Contact destinations are intentionally centralized and awaiting final
-          approved links.
-        </p>
       </div>
     </section>
   );

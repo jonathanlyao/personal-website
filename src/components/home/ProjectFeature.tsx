@@ -30,14 +30,6 @@ export function ProjectFeature({ project }: { project: Project }) {
               <li key={label}>{label}</li>
             ))}
           </ul>
-          <span
-            className="project-cta"
-            aria-label={`${project.title} case study is planned for Phase 2`}
-          >
-            Open Case Study
-            <span aria-hidden="true">↗</span>
-            <small>Phase 2</small>
-          </span>
         </div>
       </div>
       <ProjectArchitectureDiagram project={project} />

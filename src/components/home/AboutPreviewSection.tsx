@@ -1,4 +1,3 @@
-import { EditorialButton } from "@/components/ui/EditorialButton";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { TechnicalIcon } from "@/components/ui/TechnicalIcon";
 import { aboutFacts } from "@/data/site";
@@ -25,9 +24,6 @@ export function AboutPreviewSection() {
             I also co-founded Solvia One, where I apply engineering to real
             operational and commercial problems.
           </p>
-          <EditorialButton href="#contact" variant="secondary">
-            More About Me
-          </EditorialButton>
         </div>
         <div className="about-facts">
           <p className="about-facts__label">FIELD NOTES / 04 FACTS</p>

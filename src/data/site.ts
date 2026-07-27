@@ -115,31 +115,11 @@ export const aboutFacts: readonly AboutFact[] = [
   { label: "Continuous Builder & Learner", icon: "learn" },
 ];
 
-// Replace placeholder values here once Jonathan's approved public contact details
-// and resume asset are available. Components do not duplicate these values.
 export const contactMethods: readonly ContactMethod[] = [
   {
-    label: "Email",
-    value: "Address available soon",
-    href: null,
-    icon: "email",
-  },
-  {
-    label: "LinkedIn",
-    value: "Profile link pending",
-    href: null,
-    icon: "linkedin",
-  },
-  {
     label: "GitHub",
-    value: "Profile link pending",
-    href: null,
+    value: "github.com/jonathanlyao",
+    href: "https://github.com/jonathanlyao",
     icon: "github",
-  },
-  {
-    label: "Resume",
-    value: "PDF forthcoming",
-    href: null,
-    icon: "document",
   },
 ];

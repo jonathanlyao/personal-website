@@ -26,12 +26,6 @@ export function CurrentFocusSection() {
               </div>
               <h3>{entry.title}</h3>
               <p>{entry.description}</p>
-              <span
-                className="focus-ledger__arrow"
-                aria-label={`${entry.title} details will be added in a future phase`}
-              >
-                <span aria-hidden="true">↗</span>
-              </span>
             </li>
           ))}
         </ol>

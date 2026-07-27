@@ -9,9 +9,13 @@
   --color-system-black: #111619;
   --color-soft-white: #ecede8;
   --color-archive-line: #c9c5bc;
+  --font-display: var(--font-space-grotesk);
+  --font-body: var(--font-ibm-plex-sans);
+  --font-mono: var(--font-jetbrains-mono);
   --page-width: 1320px;
   --page-gutter: clamp(1rem, 4vw, 3.25rem);
-  --section-space: clamp(4.5rem, 9vw, 8rem);
+  --section-space-start: clamp(4.5rem, 6.7vw, 6rem);
+  --section-space-end: clamp(5.5rem, 7.8vw, 7.5rem);
   --full-bleed-index: max(
     calc((100vw - var(--page-width)) / 2 + 118px),
     calc(var(--page-gutter) + 118px)
@@ -25,6 +29,7 @@
 }
 
 html {
+  overflow-x: clip;
   background: var(--color-paper);
   scroll-behavior: smooth;
   scroll-padding-top: 5rem;
@@ -33,10 +38,10 @@ html {
 body {
   min-width: 320px;
   margin: 0;
-  overflow-x: hidden;
+  overflow-x: clip;
   color: var(--color-carbon);
   background: var(--color-paper);
-  font-family: var(--font-body), Arial, sans-serif;
+  font-family: var(--font-body), "Segoe UI", Arial, sans-serif;
   font-size: 16px;
   line-height: 1.6;
   text-rendering: optimizeLegibility;
@@ -93,7 +98,7 @@ main {
 
 .eyebrow {
   color: var(--color-teal);
-  font-family: var(--font-mono), monospace;
+  font-family: var(--font-mono), "SFMono-Regular", Consolas, monospace;
   font-size: 0.68rem;
   font-weight: 600;
   letter-spacing: 0.12em;
@@ -113,7 +118,7 @@ main {
 .site-header__inner {
   display: flex;
   width: min(calc(100% - (2 * var(--page-gutter))), var(--page-width));
-  min-height: 76px;
+  min-height: 72px;
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
@@ -129,19 +134,19 @@ main {
 
 .site-identity strong {
   flex: none;
-  font-family: var(--font-mono), monospace;
-  font-size: 0.83rem;
+  font-family: var(--font-display), "Avenir Next", "Segoe UI", sans-serif;
+  font-size: 0.88rem;
   font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  letter-spacing: -0.01em;
 }
 
 .site-identity span {
   overflow: hidden;
   color: var(--color-slate);
-  font-family: var(--font-mono), monospace;
-  font-size: 0.61rem;
-  letter-spacing: 0.08em;
+  font-family: var(--font-mono), "SFMono-Regular", Consolas, monospace;
+  font-size: 0.63rem;
+  font-weight: 500;
+  letter-spacing: 0.035em;
   text-overflow: ellipsis;
   text-transform: uppercase;
   white-space: nowrap;
@@ -150,7 +155,7 @@ main {
 .desktop-navigation ul {
   display: flex;
   align-items: center;
-  gap: clamp(1.25rem, 2.8vw, 2.7rem);
+  gap: clamp(1.15rem, 2.4vw, 2.25rem);
 }
 
 .desktop-navigation a {
@@ -158,11 +163,10 @@ main {
   display: inline-flex;
   min-height: 44px;
   align-items: center;
-  font-family: var(--font-mono), monospace;
-  font-size: 0.69rem;
+  font-family: var(--font-body), "Segoe UI", Arial, sans-serif;
+  font-size: 0.83rem;
   font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  letter-spacing: 0.015em;
 }
 
 .desktop-navigation a::after {
@@ -197,7 +201,7 @@ main {
 }
 
 .hero-section {
-  min-height: min(840px, calc(100svh - 76px));
+  min-height: 720px;
   border-top: 0;
 }
 
@@ -205,8 +209,8 @@ main {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
-  padding: var(--section-space) 1.25rem var(--section-space) 0;
+  gap: 1.35rem;
+  padding: var(--section-space-start) 1.1rem var(--section-space-end) 0;
   border-right: 1px solid var(--color-archive-line);
 }
 
@@ -221,16 +225,16 @@ main {
 }
 
 .section-heading__number {
-  font-family: var(--font-mono), monospace;
-  font-size: clamp(2.6rem, 4vw, 4rem);
-  font-weight: 400;
-  letter-spacing: -0.08em;
+  font-family: var(--font-mono), "SFMono-Regular", Consolas, monospace;
+  font-size: clamp(2.25rem, 3.3vw, 3.5rem);
+  font-weight: 500;
+  letter-spacing: -0.06em;
   line-height: 0.9;
 }
 
 .section-heading__label {
   max-width: 9ch;
-  font-family: var(--font-mono), monospace;
+  font-family: var(--font-mono), "SFMono-Regular", Consolas, monospace;
   font-size: 0.66rem;
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -240,9 +244,9 @@ main {
 
 .section-heading__title {
   margin-top: 1rem;
-  font-family: var(--font-display), Georgia, serif;
+  font-family: var(--font-display), "Avenir Next", "Segoe UI", sans-serif;
   font-size: 2rem;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .section-heading__description {
@@ -258,17 +262,17 @@ main {
 
 .section-content {
   min-width: 0;
-  padding: var(--section-space) 0 var(--section-space)
+  padding: var(--section-space-start) 0 var(--section-space-end)
     clamp(1.75rem, 4vw, 4rem);
 }
 
 .hero-section__content {
   display: grid;
   min-width: 0;
-  grid-template-columns: minmax(360px, 0.78fr) minmax(0, 1.22fr);
-  gap: clamp(2rem, 4vw, 4.5rem);
+  grid-template-columns: minmax(0, 1.55fr) minmax(320px, 0.65fr);
+  gap: clamp(1.75rem, 3vw, 3rem);
   align-items: center;
-  padding: clamp(4rem, 9vw, 8rem) 0 clamp(4rem, 9vw, 8rem)
+  padding: var(--section-space-start) 0 var(--section-space-end)
     clamp(1.75rem, 4vw, 4rem);
 }
 
@@ -277,13 +281,13 @@ main {
 }
 
 .hero-copy h1 {
-  max-width: 11.2ch;
+  max-width: 720px;
   margin-top: 1.1rem;
-  font-family: var(--font-display), Georgia, serif;
-  font-size: clamp(3.35rem, 5.2vw, 5.2rem);
-  font-weight: 400;
+  font-family: var(--font-display), "Avenir Next", "Segoe UI", sans-serif;
+  font-size: clamp(3.5rem, 4.25vw, 4.5rem);
+  font-weight: 500;
   letter-spacing: -0.045em;
-  line-height: 0.96;
+  line-height: 0.98;
 }
 
 .hero-copy__support {
@@ -298,7 +302,7 @@ main {
   display: grid;
   gap: 0.35rem;
   margin-top: 1.65rem;
-  font-family: var(--font-mono), monospace;
+  font-family: var(--font-mono), "SFMono-Regular", Consolas, monospace;
   font-size: 0.72rem;
   letter-spacing: 0.025em;
 }
@@ -319,12 +323,11 @@ main {
   padding: 0.8rem 1.05rem;
   border: 1px solid var(--color-carbon);
   border-radius: var(--radius-sm);
-  font-family: var(--font-mono), monospace;
-  font-size: 0.67rem;
+  font-family: var(--font-body), "Segoe UI", Arial, sans-serif;
+  font-size: 0.78rem;
   font-weight: 600;
-  letter-spacing: 0.07em;
+  letter-spacing: 0.025em;
   line-height: 1.2;
-  text-transform: uppercase;
   transition:
     color 160ms ease,
     background-color 160ms ease,
@@ -427,19 +430,22 @@ main {
 }
 
 .system-overview {
+  container-type: inline-size;
   animation: editorial-enter 560ms 80ms ease-out both;
 }
 
 .system-flow {
   display: grid;
-  min-width: 640px;
+  width: 100%;
+  min-width: 0;
   grid-template-columns: repeat(6, minmax(0, 1fr));
-  padding: 2.25rem 1.2rem 1.5rem;
+  padding: 1.75rem 0.85rem 1.25rem;
 }
 
 .system-flow__unit {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 14px;
+  min-width: 0;
+  grid-template-columns: minmax(0, 1fr) clamp(8px, 1vw, 12px);
   align-items: center;
 }
 
@@ -449,8 +455,9 @@ main {
 
 .system-flow__node {
   position: relative;
-  min-height: 158px;
-  padding: 1rem 0.55rem;
+  min-width: 0;
+  min-height: 144px;
+  padding: 0.9rem 0.35rem;
   border: 1px solid #3b4447;
   border-radius: var(--radius-sm);
   text-align: center;
@@ -478,6 +485,7 @@ main {
   letter-spacing: 0.06em;
   line-height: 1.3;
   text-transform: uppercase;
+  overflow-wrap: anywhere;
 }
 
 .system-flow__node p {
@@ -486,6 +494,7 @@ main {
   font-family: var(--font-mono), monospace;
   font-size: 0.52rem;
   line-height: 1.55;
+  overflow-wrap: anywhere;
 }
 
 .system-flow__arrow {
@@ -514,19 +523,86 @@ main {
   border-top: 1px dashed #536063;
 }
 
+@container (max-width: 480px) {
+  .system-flow {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.4rem 0;
+    padding: 1.5rem 1rem 1.25rem;
+  }
+
+  .system-flow__unit {
+    grid-template-columns: minmax(0, 1fr) 12px;
+  }
+
+  .system-flow__unit:nth-child(3) {
+    position: relative;
+    grid-column: 3;
+    grid-row: 1;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .system-flow__unit:nth-child(3) .system-flow__arrow {
+    position: absolute;
+    bottom: -1.15rem;
+    left: calc(50% - 6px);
+    width: 12px;
+    transform: rotate(90deg);
+  }
+
+  .system-flow__unit:nth-child(4),
+  .system-flow__unit:nth-child(5) {
+    grid-template-columns: 12px minmax(0, 1fr);
+  }
+
+  .system-flow__unit:nth-child(4) {
+    grid-column: 3;
+    grid-row: 2;
+  }
+
+  .system-flow__unit:nth-child(5) {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .system-flow__unit:nth-child(4) .system-flow__node,
+  .system-flow__unit:nth-child(5) .system-flow__node {
+    grid-column: 2;
+  }
+
+  .system-flow__unit:nth-child(4) .system-flow__arrow,
+  .system-flow__unit:nth-child(5) .system-flow__arrow {
+    grid-column: 1;
+    grid-row: 1;
+    transform: rotate(180deg);
+  }
+
+  .system-flow__unit:nth-child(6) {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .system-flow__node {
+    min-height: 132px;
+  }
+
+  .system-flow__node strong {
+    overflow-wrap: normal;
+  }
+}
+
 .section-intro {
-  margin-bottom: 2.8rem;
+  margin-bottom: 2rem;
 }
 
 .section-intro h2,
 .lab-feature__lead h2,
 .about-preview__statement h2,
 .contact-section__lead h2 {
-  font-family: var(--font-display), Georgia, serif;
-  font-size: clamp(2.6rem, 4.8vw, 4.8rem);
-  font-weight: 400;
+  font-family: var(--font-display), "Avenir Next", "Segoe UI", sans-serif;
+  font-size: clamp(3rem, 4.2vw, 4.5rem);
+  font-weight: 500;
   letter-spacing: -0.04em;
-  line-height: 0.98;
+  line-height: 1;
 }
 
 .section-intro--split {
@@ -551,8 +627,8 @@ main {
 
 .focus-ledger > li {
   position: relative;
-  min-height: 285px;
-  padding: 1.3rem 2rem 1.6rem 1.3rem;
+  min-height: 215px;
+  padding: 1.15rem 1.35rem 1.3rem 1.15rem;
   border-right: 1px solid var(--color-archive-line);
 }
 
@@ -568,8 +644,10 @@ main {
 }
 
 .focus-ledger__number {
-  font-family: var(--font-display), Georgia, serif;
-  font-size: 2.2rem;
+  font-family: var(--font-mono), "SFMono-Regular", Consolas, monospace;
+  font-size: 1.85rem;
+  font-weight: 500;
+  letter-spacing: -0.05em;
   line-height: 1;
 }
 
@@ -590,12 +668,12 @@ main {
   flex: none;
   border: 1px solid currentColor;
   border-radius: 50%;
-  background: var(--color-teal);
+  background: var(--color-rust);
 }
 
 .focus-ledger h3 {
   max-width: 20ch;
-  margin-top: 2.25rem;
+  margin-top: 1.55rem;
   font-size: 1.02rem;
   font-weight: 600;
   line-height: 1.3;
@@ -603,22 +681,10 @@ main {
 
 .focus-ledger > li > p {
   max-width: 34ch;
-  margin-top: 0.8rem;
+  margin-top: 0.65rem;
   color: var(--color-slate);
   font-size: 0.8rem;
   line-height: 1.6;
-}
-
-.focus-ledger__arrow {
-  position: absolute;
-  right: 1.25rem;
-  bottom: 1.15rem;
-  display: grid;
-  width: 34px;
-  height: 34px;
-  place-items: center;
-  border: 1px solid var(--color-archive-line);
-  font-family: var(--font-mono), monospace;
 }
 
 .selected-work {
@@ -648,7 +714,7 @@ main {
   grid-template-columns: minmax(300px, 0.9fr) minmax(260px, 0.6fr);
   gap: 2rem;
   align-items: end;
-  padding-bottom: clamp(3rem, 6vw, 5rem);
+  padding-bottom: clamp(2.5rem, 4.5vw, 4rem);
 }
 
 .selected-work__intro .eyebrow {
@@ -656,11 +722,12 @@ main {
 }
 
 .selected-work__intro h2 {
-  font-family: var(--font-display), Georgia, serif;
-  font-size: clamp(3.2rem, 6vw, 6.6rem);
-  font-weight: 400;
+  max-width: 760px;
+  font-family: var(--font-display), "Avenir Next", "Segoe UI", sans-serif;
+  font-size: clamp(3rem, 4.5vw, 4.75rem);
+  font-weight: 500;
   letter-spacing: -0.045em;
-  line-height: 0.86;
+  line-height: 0.98;
 }
 
 .selected-work__intro > p:last-child {
@@ -677,8 +744,8 @@ main {
   display: grid;
   min-width: 0;
   grid-template-columns: 92px minmax(280px, 0.78fr) minmax(0, 1.22fr);
-  gap: clamp(1.25rem, 3vw, 3rem);
-  padding: clamp(3.2rem, 6vw, 5.75rem) 0;
+  gap: clamp(1.25rem, 2.5vw, 2.5rem);
+  padding: clamp(3rem, 4.5vw, 4.5rem) 0;
   border-top: 1px solid #343a3d;
 }
 
@@ -688,9 +755,11 @@ main {
 }
 
 .project-feature__index > span {
-  font-family: var(--font-display), Georgia, serif;
-  font-size: clamp(3rem, 4vw, 4.5rem);
-  line-height: 0.85;
+  font-family: var(--font-mono), "SFMono-Regular", Consolas, monospace;
+  font-size: clamp(2.5rem, 3.4vw, 3.5rem);
+  font-weight: 500;
+  letter-spacing: -0.06em;
+  line-height: 0.9;
 }
 
 .project-feature__index p {
@@ -719,18 +788,18 @@ main {
 }
 
 .project-feature__copy h3 {
-  max-width: 19ch;
+  max-width: 21ch;
   margin-top: 0.8rem;
-  font-family: var(--font-display), Georgia, serif;
-  font-size: clamp(2.3rem, 3.5vw, 4rem);
-  font-weight: 400;
+  font-family: var(--font-display), "Avenir Next", "Segoe UI", sans-serif;
+  font-size: clamp(2.5rem, 3.3vw, 3.75rem);
+  font-weight: 500;
   letter-spacing: -0.035em;
-  line-height: 0.98;
+  line-height: 1;
 }
 
 .project-feature__summary {
   max-width: 46ch;
-  margin-top: 1.25rem;
+  margin-top: 1rem;
   color: #b8bebe;
   font-size: 0.86rem;
   line-height: 1.65;
@@ -740,7 +809,7 @@ main {
   display: flex;
   flex-wrap: wrap;
   gap: 0.42rem;
-  margin-top: 1.45rem;
+  margin-top: 1.15rem;
 }
 
 .technical-tag {
@@ -762,7 +831,7 @@ main {
   justify-content: space-between;
   gap: 1.25rem;
   margin-top: auto;
-  padding-top: 2rem;
+  padding-top: 1.4rem;
 }
 
 .project-feature__footer ul {
@@ -780,28 +849,12 @@ main {
   content: "/";
 }
 
-.project-cta {
-  display: inline-grid;
-  flex: none;
-  grid-template-columns: auto auto;
-  gap: 0.1rem 0.5rem;
-  align-items: center;
-  font-family: var(--font-mono), monospace;
-  font-size: 0.59rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
-.project-cta small {
-  grid-column: 1 / -1;
-  color: #727c7d;
-  font-size: 0.48rem;
-  font-weight: 400;
-}
-
 .project-feature--reverse .project-feature__copy {
   grid-column: 3;
+}
+
+.project-feature--reverse {
+  grid-template-columns: 92px minmax(0, 1.12fr) minmax(0, 0.88fr);
 }
 
 .project-feature--reverse .architecture-figure {
@@ -858,15 +911,16 @@ main {
 }
 
 .architecture-flow {
-  padding: 1.6rem 1rem 1.4rem;
-  overflow-x: auto;
-  scrollbar-color: currentColor transparent;
-  scrollbar-width: thin;
+  width: 100%;
+  min-width: 0;
+  padding: 1.35rem 0.75rem 1.15rem;
+  overflow: visible;
 }
 
 .architecture-flow__track {
   display: flex;
-  min-width: 720px;
+  width: 100%;
+  min-width: 0;
   align-items: stretch;
 }
 
@@ -874,7 +928,7 @@ main {
   display: grid;
   min-width: 0;
   flex: 1 1 0;
-  grid-template-columns: minmax(0, 1fr) 18px;
+  grid-template-columns: minmax(0, 1fr) clamp(8px, 1.2vw, 14px);
   align-items: center;
 }
 
@@ -884,7 +938,8 @@ main {
 
 .architecture-flow__node {
   display: flex;
-  min-height: 118px;
+  min-width: 0;
+  min-height: 108px;
   flex-direction: column;
   justify-content: space-between;
   padding: 0.7rem 0.55rem;
@@ -904,6 +959,7 @@ main {
   font-weight: 600;
   line-height: 1.35;
   text-transform: uppercase;
+  overflow-wrap: anywhere;
 }
 
 .architecture-flow__node small {
@@ -911,6 +967,7 @@ main {
   font-family: var(--font-mono), monospace;
   font-size: 0.48rem;
   line-height: 1.35;
+  overflow-wrap: anywhere;
 }
 
 .architecture-flow__arrow {
@@ -923,7 +980,8 @@ main {
 .architecture-flow__quality {
   position: relative;
   display: flex;
-  min-width: 720px;
+  width: 100%;
+  min-width: 0;
   justify-content: center;
   margin-top: 1rem;
 }
@@ -962,7 +1020,8 @@ main {
 
 .architecture-flow__support {
   display: flex;
-  min-width: 720px;
+  width: 100%;
+  min-width: 0;
   justify-content: space-between;
   gap: 0.75rem;
   margin-top: 1rem;
@@ -981,7 +1040,7 @@ main {
   grid-template-columns: minmax(0, 1fr) minmax(260px, 0.5fr);
   gap: 0.75rem 2rem;
   align-items: end;
-  margin-bottom: 3rem;
+  margin-bottom: 2.25rem;
 }
 
 .lab-feature__lead .eyebrow {
@@ -997,12 +1056,13 @@ main {
 .lab-feature__grid {
   display: grid;
   grid-template-columns: minmax(0, 1.08fr) minmax(340px, 0.92fr);
-  gap: clamp(1.8rem, 4vw, 4.5rem);
+  gap: clamp(1.75rem, 3.25vw, 3.5rem);
   align-items: center;
 }
 
 .job-interface {
-  min-width: 570px;
+  width: 100%;
+  min-width: 0;
   padding: 0.8rem;
   color: var(--color-carbon);
   background: #ebe9e3;
@@ -1047,7 +1107,7 @@ main {
 
 .job-interface__body {
   display: grid;
-  min-height: 275px;
+  min-height: 250px;
   grid-template-columns: 105px 1fr;
   border: 1px solid #b8b6b0;
   border-top: 0;
@@ -1114,7 +1174,7 @@ main {
 
 .job-interface__panels > div {
   min-width: 0;
-  min-height: 175px;
+  min-height: 160px;
   padding: 0.75rem;
   border-right: 1px solid #c9c6bf;
 }
@@ -1225,9 +1285,9 @@ main {
 
 .lab-feature__workflow h3 {
   max-width: 18ch;
-  font-family: var(--font-display), Georgia, serif;
-  font-size: clamp(2.1rem, 3.5vw, 3.6rem);
-  font-weight: 400;
+  font-family: var(--font-display), "Avenir Next", "Segoe UI", sans-serif;
+  font-size: clamp(2.25rem, 3.2vw, 3.25rem);
+  font-weight: 500;
   letter-spacing: -0.035em;
   line-height: 0.98;
 }
@@ -1242,7 +1302,7 @@ main {
 .lab-workflow {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  margin-top: 2rem;
+  margin-top: 1.6rem;
   border-top: 1px solid var(--color-archive-line);
   border-bottom: 1px solid var(--color-archive-line);
 }
@@ -1260,7 +1320,7 @@ main {
 
 .lab-workflow__step {
   display: flex;
-  min-height: 196px;
+  min-height: 160px;
   flex-direction: column;
   padding: 0.9rem 0.3rem 0.9rem 0;
 }
@@ -1308,11 +1368,11 @@ main {
 .about-preview__content {
   display: grid;
   grid-template-columns: minmax(0, 1.25fr) minmax(330px, 0.75fr);
-  gap: clamp(3rem, 7vw, 7rem);
+  gap: clamp(2.5rem, 5vw, 5rem);
 }
 
 .about-preview__statement h2 {
-  max-width: 13ch;
+  max-width: 16ch;
   margin-top: 0.9rem;
 }
 
@@ -1321,10 +1381,6 @@ main {
   margin-top: 1.35rem;
   color: var(--color-slate);
   font-size: 0.92rem;
-}
-
-.about-preview__statement .editorial-button {
-  margin-top: 2rem;
 }
 
 .about-facts {
@@ -1384,20 +1440,20 @@ main {
 
 .contact-section__content {
   display: grid;
-  grid-template-columns: minmax(300px, 0.75fr) minmax(0, 1.25fr);
-  gap: clamp(2rem, 5vw, 6rem);
-  align-items: end;
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(1.75rem, 3vw, 2.5rem);
 }
 
 .contact-section__lead h2 {
-  max-width: 12ch;
+  max-width: 900px;
   margin-top: 0.9rem;
-  font-size: clamp(3rem, 5vw, 5.5rem);
+  font-size: clamp(3.25rem, 4.4vw, 4rem);
 }
 
 .contact-methods {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
   border-top: 1px solid #4a5153;
   border-left: 1px solid #4a5153;
 }
@@ -1408,10 +1464,9 @@ main {
   border-bottom: 1px solid #4a5153;
 }
 
-.contact-methods a,
-.contact-methods__placeholder {
+.contact-methods a {
   display: grid;
-  min-height: 132px;
+  min-height: 102px;
   grid-template-columns: 35px minmax(0, 1fr) auto;
   gap: 0.9rem;
   align-items: center;
@@ -1424,10 +1479,6 @@ main {
 
 .contact-methods a:hover {
   background: var(--color-teal);
-}
-
-.contact-methods__placeholder {
-  color: #c4c9c6;
 }
 
 .contact-methods svg {
@@ -1452,17 +1503,6 @@ main {
   font-size: 0.66rem;
 }
 
-.contact-methods__placeholder > span:last-child {
-  color: #626b6c;
-}
-
-.contact-section__note {
-  grid-column: 2;
-  color: #858d8c;
-  font-family: var(--font-mono), monospace;
-  font-size: 0.54rem;
-}
-
 .site-footer {
   color: var(--color-soft-white);
   background: var(--color-system-black);
@@ -1471,7 +1511,7 @@ main {
 .site-footer__inner {
   display: grid;
   width: min(calc(100% - (2 * var(--page-gutter))), var(--page-width));
-  min-height: 116px;
+  min-height: 96px;
   grid-template-columns: 1fr auto auto;
   gap: 2rem;
   align-items: center;
@@ -1527,12 +1567,21 @@ main {
 }
 
 @media (max-width: 1180px) {
+  :root {
+    --section-space-start: 4.5rem;
+    --section-space-end: 6rem;
+  }
+
+  .hero-section {
+    min-height: auto;
+  }
+
   .hero-section__content {
     grid-template-columns: 1fr;
   }
 
   .hero-copy h1 {
-    max-width: 14ch;
+    max-width: 720px;
   }
 
   .project-feature,
@@ -1586,10 +1635,10 @@ main {
     justify-content: space-between;
     gap: 0.75rem;
     cursor: pointer;
-    font-family: var(--font-mono), monospace;
-    font-size: 0.64rem;
+    font-family: var(--font-body), "Segoe UI", Arial, sans-serif;
+    font-size: 0.78rem;
     font-weight: 600;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.025em;
     list-style: none;
     text-transform: uppercase;
   }
@@ -1649,8 +1698,9 @@ main {
     min-height: 56px;
     align-items: center;
     justify-content: space-between;
-    font-family: var(--font-display), Georgia, serif;
-    font-size: 1.7rem;
+    font-family: var(--font-display), "Avenir Next", "Segoe UI", sans-serif;
+    font-size: 1.55rem;
+    font-weight: 500;
   }
 
   .mobile-navigation__panel a::after {
@@ -1705,7 +1755,7 @@ main {
 
   .section-content,
   .hero-section__content {
-    padding: clamp(3.5rem, 10vw, 5.5rem) 0;
+    padding: var(--section-space-start) 0 var(--section-space-end);
   }
 
   .hero-section {
@@ -1720,16 +1770,12 @@ main {
     grid-template-columns: 1fr;
   }
 
-  .contact-section__note {
-    grid-column: 1;
-  }
-
   .focus-ledger {
     grid-template-columns: 1fr;
   }
 
   .focus-ledger > li {
-    min-height: 220px;
+    min-height: 185px;
     border-right: 0;
     border-bottom: 1px solid var(--color-archive-line);
   }
@@ -1758,6 +1804,8 @@ main {
 @media (max-width: 640px) {
   :root {
     --page-gutter: 1rem;
+    --section-space-start: 3.5rem;
+    --section-space-end: 4.5rem;
   }
 
   .site-identity {
@@ -1773,8 +1821,22 @@ main {
   }
 
   .hero-copy h1 {
-    max-width: 12ch;
-    font-size: clamp(3.1rem, 15vw, 4.5rem);
+    max-width: 100%;
+    font-size: clamp(2.65rem, 11vw, 3.75rem);
+    line-height: 1;
+  }
+
+  .section-intro h2,
+  .lab-feature__lead h2,
+  .about-preview__statement h2,
+  .selected-work__intro h2,
+  .contact-section__lead h2 {
+    font-size: clamp(2.25rem, 10vw, 3.25rem);
+  }
+
+  .project-feature__copy h3,
+  .lab-feature__workflow h3 {
+    font-size: clamp(2rem, 9vw, 3rem);
   }
 
   .hero-copy__support {
@@ -1800,6 +1862,24 @@ main {
   .system-flow__unit,
   .system-flow__unit:last-child {
     grid-template-columns: 1fr;
+  }
+
+  .system-flow__unit:nth-child(n) {
+    position: static;
+    grid-column: auto;
+    grid-row: auto;
+    grid-template-columns: 1fr;
+  }
+
+  .system-flow__unit:nth-child(4) .system-flow__node,
+  .system-flow__unit:nth-child(5) .system-flow__node,
+  .system-flow__unit:nth-child(3) .system-flow__arrow,
+  .system-flow__unit:nth-child(4) .system-flow__arrow,
+  .system-flow__unit:nth-child(5) .system-flow__arrow {
+    position: static;
+    width: auto;
+    grid-column: auto;
+    grid-row: auto;
   }
 
   .system-flow__node {
@@ -1838,6 +1918,12 @@ main {
     transform: rotate(90deg);
   }
 
+  .system-flow__unit:nth-child(3) .system-flow__arrow,
+  .system-flow__unit:nth-child(4) .system-flow__arrow,
+  .system-flow__unit:nth-child(5) .system-flow__arrow {
+    transform: rotate(90deg);
+  }
+
   .system-flow__feedback {
     grid-template-columns: 1fr;
     text-align: center;
@@ -1855,7 +1941,7 @@ main {
   .project-feature--stacked {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1.75rem;
+    gap: 1.35rem;
   }
 
   .project-feature__index,
@@ -1872,7 +1958,7 @@ main {
   }
 
   .project-feature__index > span {
-    font-size: 3rem;
+    font-size: 2.6rem;
   }
 
   .project-feature__index p,
@@ -1894,19 +1980,24 @@ main {
     grid-row: auto;
   }
 
-  .project-feature__footer {
-    display: grid;
-    gap: 1.4rem;
-  }
-
-  .project-cta {
-    justify-self: start;
-  }
-
   .architecture-flow__track,
   .architecture-flow__quality,
   .architecture-flow__support {
-    min-width: 680px;
+    min-width: 650px;
+  }
+
+  .architecture-flow {
+    overflow-x: auto;
+    overflow-y: hidden;
+    overscroll-behavior-inline: contain;
+    padding-right: 1.5rem;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .architecture-flow::-webkit-scrollbar,
+  .lab-feature__grid > .figure-frame .figure-frame__canvas::-webkit-scrollbar {
+    display: none;
   }
 
   .figure-frame__label {
@@ -1919,6 +2010,9 @@ main {
 
   .lab-feature__grid > .figure-frame .figure-frame__canvas {
     overflow-x: auto;
+    overflow-y: hidden;
+    overscroll-behavior-inline: contain;
+    scrollbar-width: none;
   }
 
   .job-interface {
@@ -1970,8 +2064,7 @@ main {
     grid-template-columns: 1fr;
   }
 
-  .contact-methods a,
-  .contact-methods__placeholder {
+  .contact-methods a {
     min-height: 92px;
   }
 

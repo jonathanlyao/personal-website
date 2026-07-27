@@ -1,5 +1,4 @@
 import { LabWorkflowDiagram } from "@/components/diagrams/LabWorkflowDiagram";
-import { EditorialButton } from "@/components/ui/EditorialButton";
 import { FigureFrame } from "@/components/ui/FigureFrame";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { JobSearchInterface } from "./JobSearchInterface";
@@ -26,7 +25,6 @@ export function LabFeatureSection() {
             title="A restrained workspace for ingestion, evidence review, and application tracking."
             tone="paper"
           >
-            {/* Replace this isolated reconstruction with approved product captures. */}
             <JobSearchInterface />
           </FigureFrame>
           <div className="lab-feature__workflow">
@@ -37,12 +35,6 @@ export function LabFeatureSection() {
               The system does not submit applications automatically.
             </p>
             <LabWorkflowDiagram />
-            <div className="button-group">
-              <EditorialButton href="#contact">Explore the Build</EditorialButton>
-              <EditorialButton href="#contact" variant="secondary">
-                View on GitHub
-              </EditorialButton>
-            </div>
           </div>
         </div>
       </div>

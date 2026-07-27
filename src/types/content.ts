@@ -6,7 +6,7 @@ export type NavItem = {
 export type ContactMethod = {
   label: string;
   value: string;
-  href: string | null;
+  href: string;
   icon: "email" | "linkedin" | "github" | "document";
 };
 

@@ -11,7 +11,7 @@ project evidence.
 - TypeScript
 - Tailwind CSS with a custom token-based CSS system
 - React Server Components by default
-- `next/font` for Instrument Serif, Inter, and IBM Plex Mono
+- `next/font` for Space Grotesk, IBM Plex Sans, and JetBrains Mono
 
 ## Local development
 
@@ -32,7 +32,5 @@ npm run build
 
 ## Content
 
-Homepage copy, navigation, status entries, contact placeholders, lab workflow,
-and featured projects are centralized in `src/data`. Replace the placeholder
-contact values in `src/data/site.ts` once approved public destinations and the
-resume PDF are available.
+Homepage copy, navigation, status entries, confirmed contact links, lab workflow,
+and featured projects are centralized in `src/data`.

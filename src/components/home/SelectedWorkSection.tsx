@@ -13,11 +13,7 @@ export function SelectedWorkSection() {
       <div className="section-content">
         <div className="selected-work__intro">
           <p className="eyebrow">ARCHITECTURE AS EVIDENCE</p>
-          <h2 id="selected-work-heading">
-            Selected systems,
-            <br />
-            documented.
-          </h2>
+          <h2 id="selected-work-heading">Selected Systems, documented.</h2>
           <p>
             Three data engineering studies organized around flow, modeling,
             quality, and useful outputs.

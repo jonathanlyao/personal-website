@@ -20,9 +20,6 @@ export function HeroSection() {
             <EditorialButton href="#selected-work">
               View Selected Work
             </EditorialButton>
-            <EditorialButton href="#contact" variant="secondary">
-              Read Resume
-            </EditorialButton>
           </div>
         </div>
         <SystemOverviewDiagram />
