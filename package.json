@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "postbuild": "node scripts/prepare-static-output.mjs",
+    "start": "node scripts/serve-static.mjs",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit"
   },
