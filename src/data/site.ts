@@ -23,7 +23,7 @@ export const siteConfig = {
 } as const;
 
 export const navigation: readonly NavItem[] = [
-  { label: "Work", href: "#selected-work" },
+  { label: "Work", href: "/work" },
   { label: "Lab", href: "#lab" },
   { label: "Writing", href: "/writing" },
   { label: "About", href: "#about" },

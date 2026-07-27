@@ -59,12 +59,20 @@ export type LabProject = {
   supportingStatement: string;
 };
 
-export type Project = {
+export type ProjectStatus = "In Development" | "Completed";
+
+export type ProjectCategory =
+  | "Batch Data Platform"
+  | "Streaming-Oriented Data Pipeline"
+  | "Analytics Engineering Platform"
+  | "Cloud Data Warehouse Pipeline"
+  | "Analytics & BI Pipeline";
+
+export type ProjectHomepagePresentation = {
   number: string;
   title: string;
   category: string;
   date: string;
-  summary: string;
   tags: readonly string[];
   focusAreas: readonly string[];
   flow: readonly {
@@ -77,8 +85,31 @@ export type Project = {
   figureTitle: string;
   layout: "standard" | "reverse" | "stacked";
   tone: "dark" | "paper" | "teal";
+};
+
+export type PortfolioProject = {
+  id: string;
+  slug: string;
+  title: string;
+  shortTitle?: string;
+  category: ProjectCategory;
+  status: ProjectStatus;
+  featured: boolean;
+  summary: string;
+  problemStatement: string;
+  focusAreas: readonly string[];
+  technologies: readonly string[];
   githubUrl?: string;
   caseStudyUrl?: string;
+  datasetScope?: string;
+  projectPeriod?: string;
+  displayOrder: number;
+  homepage?: ProjectHomepagePresentation;
+};
+
+export type Project = PortfolioProject & {
+  featured: true;
+  homepage: ProjectHomepagePresentation;
 };
 
 export type AboutFact = {

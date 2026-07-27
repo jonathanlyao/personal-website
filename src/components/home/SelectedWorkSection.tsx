@@ -21,7 +21,7 @@ export function SelectedWorkSection() {
         </div>
         <div className="project-list">
           {projects.map((project) => (
-            <ProjectFeature key={project.number} project={project} />
+            <ProjectFeature key={project.id} project={project} />
           ))}
         </div>
       </div>
