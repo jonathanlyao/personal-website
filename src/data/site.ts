@@ -2,7 +2,6 @@ import type {
   AboutFact,
   ContactMethod,
   FocusEntry,
-  LabProject,
   LabWorkflowStep,
   NavItem,
   SystemStage,
@@ -24,7 +23,7 @@ export const siteConfig = {
 
 export const navigation: readonly NavItem[] = [
   { label: "Work", href: "/work" },
-  { label: "Lab", href: "#lab" },
+  { label: "Lab", href: "/lab" },
   { label: "Writing", href: "/writing" },
   { label: "About", href: "#about" },
   { label: "Resume", href: "/resume" },
@@ -132,13 +131,6 @@ export const labWorkflow: readonly LabWorkflowStep[] = [
     icon: "track",
   },
 ];
-
-export const labProject: LabProject = {
-  description:
-    "A local-first job-search workflow for importing job descriptions, reviewing duplicates, scoring role fit against stored evidence, and tracking applications.",
-  supportingStatement:
-    "Human review remains part of every decision. The system does not automatically submit job applications.",
-};
 
 export const aboutCopy = {
   primary:

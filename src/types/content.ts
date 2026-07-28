@@ -54,11 +54,6 @@ export type LabWorkflowStep = {
   icon: "import" | "inbox" | "score" | "track";
 };
 
-export type LabProject = {
-  description: string;
-  supportingStatement: string;
-};
-
 export type ProjectStatus = "In Development" | "Completed";
 
 export type ProjectCategory =

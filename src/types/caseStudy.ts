@@ -18,8 +18,8 @@ export type CaseStudySectionKey =
   | "next-improvements"
   | "technology";
 
-export type CaseStudySectionLink = {
-  id: CaseStudySectionKey;
+export type CaseStudySectionLink<SectionId extends string = string> = {
+  id: SectionId;
   number: string;
   label: string;
   shortLabel: string;
@@ -84,7 +84,7 @@ export type ProjectCaseStudy = {
   eyebrow: string;
   supportingStatement: string;
   architectureCaption: string;
-  sections: readonly CaseStudySectionLink[];
+  sections: readonly CaseStudySectionLink<CaseStudySectionKey>[];
   overview: {
     paragraphs: readonly string[];
     status: readonly StatusItem[];

@@ -1,7 +1,8 @@
 import { LabWorkflowDiagram } from "@/components/diagrams/LabWorkflowDiagram";
+import { EditorialButton } from "@/components/ui/EditorialButton";
 import { FigureFrame } from "@/components/ui/FigureFrame";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { labProject } from "@/data/site";
+import { jobSearchOsLab } from "@/data/lab";
 import { JobSearchInterface } from "./JobSearchInterface";
 
 export function LabFeatureSection() {
@@ -16,7 +17,7 @@ export function LabFeatureSection() {
         <div className="lab-feature__lead">
           <p className="eyebrow">LOCAL-FIRST WORKFLOW / HUMAN REVIEW</p>
           <h2 id="lab-heading">Job Search OS</h2>
-          <p>{labProject.description}</p>
+          <p>{jobSearchOsLab.homepage.description}</p>
         </div>
         <div className="lab-feature__grid">
           <FigureFrame
@@ -28,8 +29,16 @@ export function LabFeatureSection() {
           </FigureFrame>
           <div className="lab-feature__workflow">
             <h3>One workflow, with human review at every step.</h3>
-            <p>{labProject.supportingStatement}</p>
+            <p>{jobSearchOsLab.homepage.supportingStatement}</p>
             <LabWorkflowDiagram />
+            <div className="lab-feature__action">
+              <EditorialButton
+                href={jobSearchOsLab.caseStudyUrl}
+                variant="secondary"
+              >
+                View Case Study
+              </EditorialButton>
+            </div>
           </div>
         </div>
       </div>
