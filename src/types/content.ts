@@ -106,8 +106,3 @@ export type Project = PortfolioProject & {
   featured: true;
   homepage: ProjectHomepagePresentation;
 };
-
-export type AboutFact = {
-  label: string;
-  icon: "location" | "building" | "data" | "focus";
-};

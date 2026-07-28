@@ -1,5 +1,4 @@
 import type {
-  AboutFact,
   ContactMethod,
   FocusEntry,
   LabWorkflowStep,
@@ -22,12 +21,12 @@ export const siteConfig = {
 } as const;
 
 export const navigation: readonly NavItem[] = [
+  { label: "About", href: "/about" },
   { label: "Work", href: "/work" },
   { label: "Lab", href: "/lab" },
   { label: "Writing", href: "/writing" },
-  { label: "About", href: "#about" },
   { label: "Resume", href: "/resume" },
-  { label: "Contact", href: "#contact" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export const profileLinks = {
@@ -129,26 +128,6 @@ export const labWorkflow: readonly LabWorkflowStep[] = [
     title: "Track Applications",
     details: ["Status", "Notes", "Follow-ups"],
     icon: "track",
-  },
-];
-
-export const aboutCopy = {
-  primary:
-    "I’m a New York–based data professional focused on building reliable data platforms, analytics systems, and practical internal tools. My work connects data engineering with business context through pipeline design, dimensional modeling, data-quality controls, orchestration, and decision-ready reporting.",
-  secondary:
-    "I also co-founded Solvia One, where I apply data and software engineering to operational, product, pricing, and commercial workflows.",
-} as const;
-
-export const aboutFacts: readonly AboutFact[] = [
-  { label: "Based in New York", icon: "location" },
-  {
-    label: "Co-founder and Data Platform Engineer, Solvia One",
-    icon: "building",
-  },
-  { label: "Data Engineering and Analytics Systems", icon: "data" },
-  {
-    label: "Current Focus: Snowflake, dbt, Orchestration, and Data Quality",
-    icon: "focus",
   },
 ];
 

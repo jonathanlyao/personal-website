@@ -1,4 +1,3 @@
-import { AboutPreviewSection } from "@/components/home/AboutPreviewSection";
 import { ContactSection } from "@/components/home/ContactSection";
 import { CurrentFocusSection } from "@/components/home/CurrentFocusSection";
 import { EngineeringNotesSection } from "@/components/home/EngineeringNotesSection";
@@ -14,7 +13,6 @@ export default function Home() {
       <SelectedWorkSection />
       <LabFeatureSection />
       <EngineeringNotesSection />
-      <AboutPreviewSection />
       <ContactSection />
     </main>
   );

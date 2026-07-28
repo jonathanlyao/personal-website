@@ -9,7 +9,7 @@ export function ContactSection() {
       id="contact"
       aria-labelledby="contact-heading"
     >
-      <SectionHeading number="07" label="Let’s Connect" inverted />
+      <SectionHeading number="06" label="Let’s Connect" inverted />
       <div className="section-content contact-section__content">
         <div className="contact-section__lead">
           <p className="eyebrow">OPEN CHANNEL / NEW YORK</p>

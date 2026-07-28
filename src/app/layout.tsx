@@ -1,18 +1,18 @@
 import type { Metadata } from "next";
 import {
+  Geist,
   IBM_Plex_Sans,
   JetBrains_Mono,
-  Space_Grotesk,
 } from "next/font/google";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { siteConfig } from "@/data/site";
 import "./globals.css";
 
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-space-grotesk",
+const geistSans = Geist({
+  variable: "--font-geist-sans",
   subsets: ["latin"],
-  weight: ["500", "600"],
+  weight: "variable",
   display: "swap",
 });
 
@@ -62,7 +62,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${spaceGrotesk.variable} ${ibmPlexSans.variable} ${jetBrainsMono.variable}`}
+      className={`${geistSans.variable} ${ibmPlexSans.variable} ${jetBrainsMono.variable}`}
     >
       <body>
         <SiteHeader />
