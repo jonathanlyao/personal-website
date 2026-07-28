@@ -6,6 +6,7 @@ import {
 } from "next/font/google";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
+import { MotionController } from "@/components/motion/MotionController";
 import { siteConfig } from "@/data/site";
 import { getSiteUrl } from "@/lib/siteUrl";
 import "./globals.css";
@@ -60,6 +61,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${ibmPlexSans.variable} ${jetBrainsMono.variable}`}
     >
       <body>
+        <MotionController />
         <a className="skip-link" href="#top">
           Skip to main content
         </a>

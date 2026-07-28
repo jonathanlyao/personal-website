@@ -8,7 +8,11 @@ export function ProjectRegistry({
   projects: readonly PortfolioProject[];
 }) {
   return (
-    <section className="work-index" aria-labelledby="work-index-heading">
+    <section
+      className="work-index"
+      aria-labelledby="work-index-heading"
+      data-reveal
+    >
       <div className="work-index__heading">
         <h2 className="visually-hidden" id="work-index-heading">
           Project registry

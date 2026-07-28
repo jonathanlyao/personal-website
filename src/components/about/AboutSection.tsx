@@ -18,6 +18,7 @@ export function AboutSection({
       className={`about-section about-section--${tone}`}
       id={id}
       aria-labelledby={`${id}-heading`}
+      data-reveal
     >
       <header className="about-section__heading">
         <p>{number}</p>

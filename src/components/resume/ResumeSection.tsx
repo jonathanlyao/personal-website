@@ -18,6 +18,7 @@ export function ResumeSection({
       className={`resume-section resume-section--${id}`}
       id={id}
       aria-labelledby={headingId}
+      data-reveal
     >
       <header className="resume-section__heading">
         <span aria-hidden="true">{number}</span>

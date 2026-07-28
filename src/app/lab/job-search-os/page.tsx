@@ -270,6 +270,7 @@ export default function JobSearchOsCaseStudyPage() {
         <section
           className="case-study-navigation"
           aria-labelledby="lab-case-study-navigation-heading"
+          data-reveal
         >
           <div>
             <p>19 / Lab Navigation</p>

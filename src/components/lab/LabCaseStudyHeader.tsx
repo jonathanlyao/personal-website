@@ -14,7 +14,7 @@ export function LabCaseStudyHeader({
   const systemNumber = String(item.displayOrder).padStart(2, "0");
 
   return (
-    <header className="lab-case-study-header">
+    <header className="lab-case-study-header" data-reveal="introduction">
       <Link className="lab-case-study-header__back" href="/lab">
         <span aria-hidden="true">←</span>
         Back to Lab

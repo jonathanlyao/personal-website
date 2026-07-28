@@ -4,7 +4,11 @@ import type { LabItem } from "@/types/lab";
 
 export function LabRegistry({ items }: { items: readonly LabItem[] }) {
   return (
-    <section className="lab-index" aria-labelledby="lab-index-heading">
+    <section
+      className="lab-index"
+      aria-labelledby="lab-index-heading"
+      data-reveal
+    >
       <div className="lab-index__heading">
         <h2 className="visually-hidden" id="lab-index-heading">
           Product systems registry

@@ -2,7 +2,7 @@ import { aboutPage } from "@/data/about";
 
 export function AboutPageHeader() {
   return (
-    <header className="about-page__header">
+    <header className="about-page__header" data-reveal="introduction">
       <p className="about-page__marker">ABOUT / 01</p>
       <div className="about-page__header-grid">
         <div className="about-page__introduction">

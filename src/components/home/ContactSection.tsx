@@ -8,6 +8,7 @@ export function ContactSection() {
       className="indexed-section contact-section"
       id="contact"
       aria-labelledby="contact-heading"
+      data-reveal
     >
       <SectionHeading number="06" label="Let’s Connect" inverted />
       <div className="section-content contact-section__content">

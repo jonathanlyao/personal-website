@@ -9,6 +9,7 @@ export function SystemOverviewDiagram() {
       title="A dependable path from raw inputs to business decisions."
       tone="dark"
       className="system-overview"
+      architectureSequence
     >
       <div
         className="system-flow"
@@ -16,7 +17,11 @@ export function SystemOverviewDiagram() {
         aria-label="Data system overview: Sources to Ingestion to Warehouse to Modeling to Quality to Decisions."
       >
         {systemStages.map((stage, index) => (
-          <div className="system-flow__unit" key={stage.title}>
+          <div
+            className="system-flow__unit"
+            data-architecture-step={index + 1}
+            key={stage.title}
+          >
             <div className="system-flow__node">
               <span className="system-flow__index">
                 {String(index + 1).padStart(2, "0")}

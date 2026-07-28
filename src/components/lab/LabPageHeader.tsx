@@ -10,7 +10,7 @@ export function LabPageHeader({
   ).length;
 
   return (
-    <header className="lab-page__header">
+    <header className="lab-page__header" data-reveal="introduction">
       <p className="lab-page__marker">LAB / 01</p>
       <div className="lab-page__introduction">
         <p className="eyebrow">LAB / PRODUCT SYSTEMS</p>

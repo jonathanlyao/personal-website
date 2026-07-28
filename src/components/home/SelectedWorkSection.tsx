@@ -8,6 +8,7 @@ export function SelectedWorkSection() {
       className="indexed-section selected-work"
       id="selected-work"
       aria-labelledby="selected-work-heading"
+      data-reveal
     >
       <SectionHeading number="03" label="Selected Work" inverted />
       <div className="section-content">

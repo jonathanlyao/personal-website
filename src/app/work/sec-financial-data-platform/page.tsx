@@ -226,6 +226,7 @@ export default function SecFinancialDataPlatformCaseStudyPage() {
         <section
           className="case-study-navigation"
           aria-labelledby="case-study-navigation-heading"
+          data-reveal
         >
           <div>
             <p>14 / Repository / Work Navigation</p>

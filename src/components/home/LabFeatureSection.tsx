@@ -11,6 +11,7 @@ export function LabFeatureSection() {
       className="indexed-section lab-feature"
       id="lab"
       aria-labelledby="lab-heading"
+      data-reveal
     >
       <SectionHeading number="04" label="Job Search OS" />
       <div className="section-content">

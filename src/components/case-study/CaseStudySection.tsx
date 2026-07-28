@@ -17,6 +17,7 @@ export function CaseStudySection({
       className={`case-study-section case-study-section--${tone}`}
       id={section.id}
       aria-labelledby={`${section.id}-heading`}
+      data-reveal
     >
       <div className="case-study-section__marker" aria-hidden="true">
         <span>{section.number}</span>

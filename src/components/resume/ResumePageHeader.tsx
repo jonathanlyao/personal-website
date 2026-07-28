@@ -20,7 +20,7 @@ function ExternalProfileLink({
 
 export function ResumePageHeader({ data }: { data: ResumeData }) {
   return (
-    <header className="resume-page__header">
+    <header className="resume-page__header" data-reveal="introduction">
       <div className="resume-page__identity">
         <p className="eyebrow">RESUME / PROFESSIONAL RECORD</p>
         <p className="resume-page__print-name">{data.name}</p>

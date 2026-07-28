@@ -11,6 +11,7 @@ export function EngineeringNotesSection() {
       className="indexed-section writing-section"
       id="writing"
       aria-labelledby="writing-heading"
+      data-reveal
     >
       <SectionHeading number="05" label="Engineering Notes" />
       <div className="section-content writing-section__content">

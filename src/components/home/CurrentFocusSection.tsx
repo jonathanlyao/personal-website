@@ -7,6 +7,7 @@ export function CurrentFocusSection() {
     <section
       className="indexed-section current-focus"
       aria-labelledby="current-focus-heading"
+      data-reveal
     >
       <SectionHeading number="02" label="Currently Building" />
       <div className="section-content">

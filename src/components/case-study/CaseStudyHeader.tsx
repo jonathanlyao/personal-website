@@ -15,7 +15,7 @@ export function CaseStudyHeader({
   const projectNumber = String(project.displayOrder).padStart(2, "0");
 
   return (
-    <header className="case-study-header">
+    <header className="case-study-header" data-reveal="introduction">
       <Link className="case-study-header__back" href="/work">
         <span aria-hidden="true">←</span>
         Back to Work

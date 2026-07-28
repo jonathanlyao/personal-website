@@ -23,7 +23,7 @@ export function WorkPageHeader({
   ];
 
   return (
-    <header className="work-page__header">
+    <header className="work-page__header" data-reveal="introduction">
       <p className="work-page__marker">WORK / 01</p>
       <div className="work-page__introduction">
         <p className="eyebrow">WORK / SYSTEMS INDEX</p>

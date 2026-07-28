@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 export default function WritingPage() {
   return (
     <main className="writing-page" id="top" tabIndex={-1}>
-      <header className="writing-page__header">
+      <header className="writing-page__header" data-reveal="introduction">
         <p className="writing-page__marker">WRITING / 01</p>
         <div className="writing-page__introduction">
           <p className="eyebrow">ENGINEERING NOTES / DEBUGGING RECORDS</p>
@@ -39,6 +39,7 @@ export default function WritingPage() {
       <section
         className="writing-index"
         aria-labelledby="writing-index-heading"
+        data-reveal
       >
         <h2 className="visually-hidden" id="writing-index-heading">
           Writing index
