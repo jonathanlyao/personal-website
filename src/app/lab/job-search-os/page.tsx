@@ -24,11 +24,15 @@ export const metadata: Metadata = {
   title: "Job Search OS Case Study | Lee Yao",
   description:
     "A case study of Lee Yao’s local-first Job Search OS, covering Chrome extension ingestion, Import Inbox workflows, evidence-based fit scoring, SQLite tracking, duplicate detection, security controls, and human review.",
+  alternates: {
+    canonical: "/lab/job-search-os",
+  },
   openGraph: {
     title: "Job Search OS Case Study | Lee Yao",
     description:
       "A local-first workflow system for importing jobs, evaluating evidence, tracking decisions, preventing duplicates, and keeping application submission under user control.",
     type: "website",
+    url: "/lab/job-search-os",
   },
 };
 
@@ -50,7 +54,11 @@ export default function JobSearchOsCaseStudyPage() {
   }
 
   return (
-    <main className="case-study-page lab-case-study-page" id="top">
+    <main
+      className="case-study-page lab-case-study-page"
+      id="top"
+      tabIndex={-1}
+    >
       <LabCaseStudyHeader item={item} caseStudy={caseStudy} />
 
       <div className="case-study-body">

@@ -12,17 +12,21 @@ export const metadata: Metadata = {
   title: "Resume | Lee Yao",
   description:
     "Web résumé for Lee Yao, a New York–based Data Engineer and Analytics Engineer working with Python, SQL, Snowflake, dbt, Airflow, AWS, and Power BI.",
+  alternates: {
+    canonical: "/resume",
+  },
   openGraph: {
     title: "Resume | Lee Yao",
     description:
       "Experience, skills, data engineering projects, education, and credentials for Lee Yao.",
     type: "website",
+    url: "/resume",
   },
 };
 
 export default function ResumePage() {
   return (
-    <main className="resume-page" id="top">
+    <main className="resume-page" id="top" tabIndex={-1}>
       <ResumePageHeader data={resumeData} />
 
       <div className="resume-page__body">

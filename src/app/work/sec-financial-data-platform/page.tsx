@@ -19,11 +19,15 @@ export const metadata: Metadata = {
   title: "SEC Financial Data Platform Case Study | Lee Yao",
   description:
     "A case study of Lee Yao’s SEC Financial Data Platform, covering batch ingestion, AWS S3, Python, Spark, Snowflake, dbt, Airflow, Great Expectations, financial-data normalization, and anomaly-monitoring design.",
+  alternates: {
+    canonical: "/work/sec-financial-data-platform",
+  },
   openGraph: {
     title: "SEC Financial Data Platform Case Study | Lee Yao",
     description:
       "An engineering case study covering SEC financial-data ingestion, layered modeling, data-quality controls, implementation decisions, trade-offs, and planned monitoring outputs.",
     type: "website",
+    url: "/work/sec-financial-data-platform",
   },
 };
 
@@ -47,7 +51,7 @@ export default function SecFinancialDataPlatformCaseStudyPage() {
   }
 
   return (
-    <main className="case-study-page" id="top">
+    <main className="case-study-page" id="top" tabIndex={-1}>
       <CaseStudyHeader project={project} caseStudy={caseStudy} />
 
       <div className="case-study-body">

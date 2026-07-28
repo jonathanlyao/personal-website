@@ -10,17 +10,21 @@ export const metadata: Metadata = {
   title: "About | Lee Yao",
   description:
     "About Lee Yao, a New York–based Data Engineer and Analytics Engineer building data pipelines, dimensional models, quality controls, analytics systems, and local-first workflow tools.",
+  alternates: {
+    canonical: "/about",
+  },
   openGraph: {
     title: "About | Lee Yao",
     description:
       "Lee Yao’s engineering focus, working principles, current systems, technical writing, and approach to building reliable analytical outputs.",
     type: "website",
+    url: "/about",
   },
 };
 
 export default function AboutPage() {
   return (
-    <main className="about-page" id="top">
+    <main className="about-page" id="top" tabIndex={-1}>
       <AboutPageHeader />
 
       <div className="about-page__body">

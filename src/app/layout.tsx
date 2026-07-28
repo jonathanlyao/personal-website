@@ -7,6 +7,7 @@ import {
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { siteConfig } from "@/data/site";
+import { getSiteUrl } from "@/lib/siteUrl";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -30,9 +31,7 @@ const jetBrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
-const metadataBase = new URL(
-  process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
-);
+const metadataBase = getSiteUrl();
 
 export const metadata: Metadata = {
   metadataBase,
@@ -48,10 +47,6 @@ export const metadata: Metadata = {
     description: siteConfig.description,
     siteName: `${siteConfig.name} Portfolio`,
   },
-  robots: {
-    index: true,
-    follow: true,
-  },
 };
 
 export default function RootLayout({
@@ -65,6 +60,9 @@ export default function RootLayout({
       className={`${geistSans.variable} ${ibmPlexSans.variable} ${jetBrainsMono.variable}`}
     >
       <body>
+        <a className="skip-link" href="#top">
+          Skip to main content
+        </a>
         <SiteHeader />
         {children}
         <SiteFooter />

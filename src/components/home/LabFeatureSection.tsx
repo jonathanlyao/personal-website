@@ -12,7 +12,7 @@ export function LabFeatureSection() {
       id="lab"
       aria-labelledby="lab-heading"
     >
-      <SectionHeading number="04" label="Lab Feature" />
+      <SectionHeading number="04" label="Job Search OS" />
       <div className="section-content">
         <div className="lab-feature__lead">
           <p className="eyebrow">LOCAL-FIRST WORKFLOW / HUMAN REVIEW</p>

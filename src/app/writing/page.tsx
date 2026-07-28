@@ -7,16 +7,20 @@ export const metadata: Metadata = {
   title: "Engineering Notes | Lee Yao",
   description:
     "Technical writing by Lee Yao on Docker, Spark, Kafka, Airflow, data pipelines, orchestration, debugging, and reliable data systems.",
+  alternates: {
+    canonical: "/writing",
+  },
   openGraph: {
     title: "Engineering Notes | Lee Yao",
     description: "Notes from building, debugging, and understanding data systems.",
     type: "website",
+    url: "/writing",
   },
 };
 
 export default function WritingPage() {
   return (
-    <main className="writing-page" id="top">
+    <main className="writing-page" id="top" tabIndex={-1}>
       <header className="writing-page__header">
         <p className="writing-page__marker">WRITING / 01</p>
         <div className="writing-page__introduction">

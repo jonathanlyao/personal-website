@@ -1,13 +1,31 @@
+import type { Metadata } from "next";
 import { ContactSection } from "@/components/home/ContactSection";
 import { CurrentFocusSection } from "@/components/home/CurrentFocusSection";
 import { EngineeringNotesSection } from "@/components/home/EngineeringNotesSection";
 import { HeroSection } from "@/components/home/HeroSection";
 import { LabFeatureSection } from "@/components/home/LabFeatureSection";
 import { SelectedWorkSection } from "@/components/home/SelectedWorkSection";
+import { siteConfig } from "@/data/site";
+
+export const metadata: Metadata = {
+  title: `${siteConfig.name} | ${siteConfig.title}`,
+  description: siteConfig.description,
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "/",
+    title: `${siteConfig.name} | ${siteConfig.title}`,
+    description: siteConfig.description,
+    siteName: `${siteConfig.name} Portfolio`,
+  },
+};
 
 export default function Home() {
   return (
-    <main id="top">
+    <main id="top" tabIndex={-1}>
       <HeroSection />
       <CurrentFocusSection />
       <SelectedWorkSection />
