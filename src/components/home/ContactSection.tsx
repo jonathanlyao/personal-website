@@ -10,10 +10,10 @@ export function ContactSection() {
       aria-labelledby="contact-heading"
       data-reveal
     >
-      <SectionHeading number="06" label="Let’s Connect" inverted />
+      <SectionHeading number="06" label="Let’s Connect" />
       <div className="section-content contact-section__content">
         <div className="contact-section__lead">
-          <p className="eyebrow">OPEN CHANNEL / NEW YORK</p>
+          <p className="eyebrow">RAW TO RELIABLE / OPEN CHANNEL / NEW YORK</p>
           <h2 id="contact-heading">
             Have a data engineering role, technical problem, or project worth
             discussing?

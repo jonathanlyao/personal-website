@@ -23,7 +23,7 @@ export function ProductArchitectureFigure({
       className="product-architecture"
       label="JOB SEARCH OS / LOCAL PRODUCT ARCHITECTURE / FIG. 01"
       title={caption}
-      tone="dark"
+      tone="technical"
     >
       <div className="product-architecture__legend" aria-label="State legend">
         {legendStates.map((state) => (

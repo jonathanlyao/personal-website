@@ -3,7 +3,6 @@ type SectionHeadingProps = {
   label: string;
   title?: string;
   description?: string;
-  inverted?: boolean;
 };
 
 export function SectionHeading({
@@ -11,10 +10,9 @@ export function SectionHeading({
   label,
   title,
   description,
-  inverted = false,
 }: SectionHeadingProps) {
   return (
-    <header className={`section-heading${inverted ? " section-heading--inverted" : ""}`}>
+    <header className="section-heading">
       <p className="section-heading__number">{number}</p>
       <div>
         <p className="section-heading__label">{label}</p>

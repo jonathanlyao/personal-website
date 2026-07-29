@@ -1,4 +1,5 @@
 import { EditorialButton } from "@/components/ui/EditorialButton";
+import { ProjectVisual } from "@/components/ui/ProjectVisual";
 import { StatusLabel } from "@/components/ui/StatusLabel";
 import { TechnicalTag } from "@/components/ui/TechnicalTag";
 import type { PortfolioProject } from "@/types/content";
@@ -34,6 +35,13 @@ export function ProjectRegistryItem({
         </div>
 
         <div className="registry-project__main">
+          {project.media ? (
+            <ProjectVisual
+              {...project.media}
+              className="registry-project__visual"
+              sizes="(max-width: 900px) calc(100vw - 2rem), 560px"
+            />
+          ) : null}
           <h2 id={`work-project-${project.slug}`}>{project.title}</h2>
           {project.projectPeriod || project.datasetScope ? (
             <p className="registry-project__scope">

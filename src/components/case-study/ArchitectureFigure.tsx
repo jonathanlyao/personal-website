@@ -23,7 +23,7 @@ export function ArchitectureFigure({
       className="case-study-architecture"
       label="SEC PLATFORM / CURRENT-TO-TARGET ARCHITECTURE / FIG. 01"
       title={caption}
-      tone="dark"
+      tone="technical"
     >
       <div className="case-study-architecture__legend" aria-label="State legend">
         {legendStates.map((state) => (

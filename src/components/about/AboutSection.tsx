@@ -11,7 +11,7 @@ export function AboutSection({
   number: string;
   title: string;
   children: ReactNode;
-  tone?: "paper" | "dark";
+  tone?: "paper" | "accent";
 }) {
   return (
     <section

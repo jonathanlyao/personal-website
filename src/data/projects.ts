@@ -74,7 +74,7 @@ export const portfolioProjects: readonly PortfolioProject[] = [
       figureTitle:
         "Layered ingestion, validation, and financial modeling flow.",
       layout: "standard",
-      tone: "dark",
+      tone: "technical",
     },
   },
   {
@@ -209,7 +209,7 @@ export const portfolioProjects: readonly PortfolioProject[] = [
       figureLabel: "OLIST ANALYTICS / MODELING / FIG. 04",
       figureTitle: "Dimensional models organized for e-commerce reporting.",
       layout: "stacked",
-      tone: "teal",
+      tone: "accent",
     },
   },
   {

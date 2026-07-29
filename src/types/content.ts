@@ -56,6 +56,19 @@ export type LabWorkflowStep = {
 
 export type ProjectStatus = "In Development" | "Completed";
 
+export type ProjectMedia = {
+  src?: string;
+  alt: string;
+  caption?: string;
+  eyebrow?: string;
+  sourceNote?: string;
+  priority?: boolean;
+  aspectRatio?: "16:10" | "16:9" | "4:3" | "portrait" | "auto";
+  fit?: "cover" | "contain";
+  tone?: "light" | "dark";
+  variant?: "full" | "contained";
+};
+
 export type ProjectCategory =
   | "Batch Data Platform"
   | "Streaming-Oriented Data Pipeline"
@@ -79,7 +92,7 @@ export type ProjectHomepagePresentation = {
   figureLabel: string;
   figureTitle: string;
   layout: "standard" | "reverse" | "stacked";
-  tone: "dark" | "paper" | "teal";
+  tone: "paper" | "technical" | "accent";
 };
 
 export type PortfolioProject = {
@@ -99,6 +112,7 @@ export type PortfolioProject = {
   datasetScope?: string;
   projectPeriod?: string;
   displayOrder: number;
+  media?: ProjectMedia;
   homepage?: ProjectHomepagePresentation;
 };
 

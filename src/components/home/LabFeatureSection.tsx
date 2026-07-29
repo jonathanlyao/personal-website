@@ -16,7 +16,9 @@ export function LabFeatureSection() {
       <SectionHeading number="04" label="Job Search OS" />
       <div className="section-content">
         <div className="lab-feature__lead">
-          <p className="eyebrow">LOCAL-FIRST WORKFLOW / HUMAN REVIEW</p>
+          <p className="eyebrow">
+            RAW TO RELIABLE / LOCAL-FIRST WORKFLOW / HUMAN REVIEW
+          </p>
           <h2 id="lab-heading">Job Search OS</h2>
           <p>{jobSearchOsLab.homepage.description}</p>
         </div>

@@ -12,8 +12,10 @@ import { ImplementationBadge } from "@/components/case-study/ImplementationBadge
 import { StatusLedger } from "@/components/case-study/StatusLedger";
 import { TechnologyIndex } from "@/components/case-study/TechnologyIndex";
 import { EditorialButton } from "@/components/ui/EditorialButton";
+import { ProjectVisual } from "@/components/ui/ProjectVisual";
 import { secFinancialDataPlatformCaseStudy as caseStudy } from "@/data/caseStudies";
 import { portfolioProjects } from "@/data/projects";
+import { projectMedia } from "@/data/projectMedia";
 
 export const metadata: Metadata = {
   title: "SEC Financial Data Platform Case Study | Lee Yao",
@@ -65,6 +67,7 @@ export default function SecFinancialDataPlatformCaseStudyPage() {
             items={caseStudy.overview.status}
             groupLabel="Current implementation summary"
           />
+          <ProjectVisual {...projectMedia.secOverview} />
         </CaseStudySection>
 
         <CaseStudySection section={section("problem")}>
@@ -119,12 +122,13 @@ export default function SecFinancialDataPlatformCaseStudyPage() {
 
         <CaseStudySection
           section={section("architecture")}
-          tone="dark"
+          tone="accent"
         >
           <ArchitectureFigure
             groups={caseStudy.architecture}
             caption={caseStudy.architectureCaption}
           />
+          <ProjectVisual {...projectMedia.secArchitecture} />
         </CaseStudySection>
 
         <CaseStudySection section={section("data-flow")}>
@@ -171,6 +175,7 @@ export default function SecFinancialDataPlatformCaseStudyPage() {
               </ul>
             </div>
           </div>
+          <ProjectVisual {...projectMedia.secDataModel} />
         </CaseStudySection>
 
         <CaseStudySection
@@ -184,6 +189,7 @@ export default function SecFinancialDataPlatformCaseStudyPage() {
             items={caseStudy.quality.items}
             groupLabel="Data quality implementation"
           />
+          <ProjectVisual {...projectMedia.secValidation} />
         </CaseStudySection>
 
         <CaseStudySection section={section("decisions")}>
@@ -199,6 +205,7 @@ export default function SecFinancialDataPlatformCaseStudyPage() {
             items={caseStudy.outputs}
             groupLabel="Current and target outputs"
           />
+          <ProjectVisual {...projectMedia.secDashboard} />
         </CaseStudySection>
 
         <CaseStudySection section={section("progress")}>
@@ -206,6 +213,7 @@ export default function SecFinancialDataPlatformCaseStudyPage() {
             items={caseStudy.progress}
             groupLabel="Project implementation progress"
           />
+          <ProjectVisual {...projectMedia.secEvidence} />
         </CaseStudySection>
 
         <CaseStudySection section={section("next-improvements")}>

@@ -10,13 +10,13 @@ export function SiteHeader() {
         <Link
           className="site-identity"
           href="/"
-          aria-label={`${siteConfig.name}, home`}
+          aria-label={`${siteConfig.brand}, ${siteConfig.attribution}, home`}
         >
-          <strong>{siteConfig.name}</strong>
-          <span className="site-identity__title-full">{siteConfig.title}</span>
-          <span className="site-identity__title-mobile">
-            {siteConfig.mobileTitle}
+          <span className="site-identity__brand">
+            <strong>{siteConfig.brand}</strong>
+            <span>{siteConfig.attribution}</span>
           </span>
+          <span className="site-identity__role">{siteConfig.title}</span>
         </Link>
         <nav className="desktop-navigation" aria-label="Primary navigation">
           <ul>

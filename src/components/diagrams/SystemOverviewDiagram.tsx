@@ -5,9 +5,9 @@ import { TechnicalIcon } from "@/components/ui/TechnicalIcon";
 export function SystemOverviewDiagram() {
   return (
     <FigureFrame
-      label="DATA SYSTEM OVERVIEW / FIG. 01"
-      title="A dependable path from raw inputs to business decisions."
-      tone="dark"
+      label="RAW TO RELIABLE / SYSTEM PATH / FIG. 01"
+      title="Raw inputs become validated systems, trusted outputs, and usable decisions."
+      tone="technical"
       className="system-overview"
       architectureSequence
     >
@@ -20,6 +20,9 @@ export function SystemOverviewDiagram() {
           <div
             className="system-flow__unit"
             data-architecture-step={index + 1}
+            data-stage-tone={
+              index < 2 ? "raw" : index < 5 ? "validated" : "reliable"
+            }
             key={stage.title}
           >
             <div className="system-flow__node">
@@ -39,9 +42,9 @@ export function SystemOverviewDiagram() {
         ))}
       </div>
       <div className="system-flow__feedback" aria-hidden="true">
-        <span>Quality signals</span>
+        <span>Validation signals</span>
         <i />
-        <span>Continuous review</span>
+        <span>Reliable decisions</span>
       </div>
     </FigureFrame>
   );

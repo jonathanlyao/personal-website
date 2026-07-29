@@ -5,8 +5,11 @@ export function SiteFooter() {
   return (
     <footer className="site-footer">
       <div className="site-footer__inner">
-        <div>
-          <strong>{siteConfig.name}</strong>
+        <div className="site-footer__identity">
+          <span>
+            <strong>{siteConfig.brand}</strong>
+            <small>{siteConfig.attribution}</small>
+          </span>
           <span>{siteConfig.title}</span>
         </div>
         <p>Built with Next.js</p>

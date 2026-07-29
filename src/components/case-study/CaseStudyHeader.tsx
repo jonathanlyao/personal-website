@@ -28,7 +28,7 @@ export function CaseStudyHeader({
       </div>
 
       <div className="case-study-header__title">
-        <p className="eyebrow">{caseStudy.eyebrow}</p>
+        <p className="eyebrow">RAW TO RELIABLE / {caseStudy.eyebrow}</p>
         <h1>{project.title}</h1>
         <p className="case-study-header__summary">{project.summary}</p>
         <p className="case-study-header__supporting">

@@ -1,9 +1,10 @@
-# Lee Yao — Personal Website
+# RAW TO RELIABLE — by Lee Yao
 
-Lee Yao’s professional portfolio, built around the Editorial Data Systems
-direction. The site presents data engineering work through structured project
-evidence, architecture figures, technical labels, case studies, and a
-print-ready résumé.
+Lee Yao’s professional data engineering portfolio. “Raw to Reliable” is the
+principle connecting the site: preserve source context, validate what changes,
+and make each output useful at the point of decision. The established
+Editorial Data Systems structure presents that work through project evidence,
+architecture figures, technical labels, case studies, and a print-ready résumé.
 
 ## Stack
 
@@ -14,6 +15,7 @@ print-ready résumé.
 - React Server Components by default
 - `next/font` for Geist Sans, IBM Plex Sans, and JetBrains Mono
 - Static export with no database or runtime API dependency
+- Optional, layout-stable project media through `ProjectVisual`
 
 ## Public routes
 
@@ -27,6 +29,10 @@ print-ready résumé.
 - `/resume`
 
 The build also generates `/sitemap.xml`, `/robots.txt`, and a custom 404 page.
+
+Future project imagery and exact public asset paths are documented in
+[`public/images/README.md`](public/images/README.md). Missing media sources
+render nothing and do not create empty media frames.
 
 ## Local setup
 

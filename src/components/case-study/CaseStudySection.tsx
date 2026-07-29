@@ -10,7 +10,7 @@ export function CaseStudySection({
   section: CaseStudySectionLink;
   introduction?: string;
   children: ReactNode;
-  tone?: "paper" | "dark";
+  tone?: "paper" | "accent";
 }) {
   return (
     <section

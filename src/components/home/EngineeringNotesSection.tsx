@@ -16,7 +16,9 @@ export function EngineeringNotesSection() {
       <SectionHeading number="05" label="Engineering Notes" />
       <div className="section-content writing-section__content">
         <header className="writing-section__intro">
-          <p className="eyebrow">DEBUGGING / SYSTEMS / DOCUMENTATION</p>
+          <p className="eyebrow">
+            RAW TO RELIABLE / DEBUGGING / SYSTEMS / DOCUMENTATION
+          </p>
           <h2 id="writing-heading">
             Debugging systems, documenting the reasons.
           </h2>

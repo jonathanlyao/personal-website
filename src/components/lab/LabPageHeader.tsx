@@ -13,7 +13,7 @@ export function LabPageHeader({
     <header className="lab-page__header" data-reveal="introduction">
       <p className="lab-page__marker">LAB / 01</p>
       <div className="lab-page__introduction">
-        <p className="eyebrow">LAB / PRODUCT SYSTEMS</p>
+        <p className="eyebrow">RAW TO RELIABLE / LAB / PRODUCT SYSTEMS</p>
         <h1>Tools, Workflows &amp; Product Experiments</h1>
         <p className="lab-page__statement">
           A collection of local-first tools and engineering experiments that
@@ -24,6 +24,9 @@ export function LabPageHeader({
           not fit neatly inside a traditional data pipeline: browser ingestion,
           scoring logic, workflow state, local persistence, secure integrations,
           and iterative interface design.
+        </p>
+        <p className="brand-system-path">
+          Capture / Inspect / Score / Persist / Review / Decide
         </p>
         <dl className="lab-summary" aria-label="Lab summary">
           <div>

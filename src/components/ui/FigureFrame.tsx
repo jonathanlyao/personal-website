@@ -4,7 +4,7 @@ type FigureFrameProps = {
   label: string;
   title: string;
   children: ReactNode;
-  tone?: "dark" | "paper" | "teal";
+  tone?: "paper" | "technical" | "accent";
   className?: string;
   architectureSequence?: boolean;
 };

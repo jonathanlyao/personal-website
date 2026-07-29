@@ -40,7 +40,12 @@ export default function AboutPage() {
           </div>
         </AboutSection>
 
-        <AboutSection id="how-i-work" number="02" title="How I Work" tone="dark">
+        <AboutSection
+          id="how-i-work"
+          number="02"
+          title="How I Work"
+          tone="accent"
+        >
           <AboutPrinciples />
         </AboutSection>
 

@@ -8,7 +8,7 @@ import { SelectedWorkSection } from "@/components/home/SelectedWorkSection";
 import { siteConfig } from "@/data/site";
 
 export const metadata: Metadata = {
-  title: `${siteConfig.name} | ${siteConfig.title}`,
+  title: `${siteConfig.brand} — ${siteConfig.name}`,
   description: siteConfig.description,
   alternates: {
     canonical: "/",
@@ -17,9 +17,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "/",
-    title: `${siteConfig.name} | ${siteConfig.title}`,
+    title: `${siteConfig.brand} — ${siteConfig.name}`,
     description: siteConfig.description,
-    siteName: `${siteConfig.name} Portfolio`,
+    siteName: `${siteConfig.brand} by ${siteConfig.name}`,
   },
 };
 

@@ -17,8 +17,10 @@ import { LimitationsLedger } from "@/components/lab/LimitationsLedger";
 import { ProductArchitectureFigure } from "@/components/lab/ProductArchitectureFigure";
 import { ProductEvolutionLedger } from "@/components/lab/ProductEvolutionLedger";
 import { EditorialButton } from "@/components/ui/EditorialButton";
+import { ProjectVisual } from "@/components/ui/ProjectVisual";
 import { jobSearchOsLab } from "@/data/lab";
 import { jobSearchOsCaseStudy as caseStudy } from "@/data/labCaseStudies";
+import { projectMedia } from "@/data/projectMedia";
 
 export const metadata: Metadata = {
   title: "Job Search OS Case Study | Lee Yao",
@@ -72,6 +74,7 @@ export default function JobSearchOsCaseStudyPage() {
             items={caseStudy.overview.status}
             groupLabel="Job Search OS implementation summary"
           />
+          <ProjectVisual {...projectMedia.jobOverview} />
         </CaseStudySection>
 
         <CaseStudySection section={section("problem")}>
@@ -107,11 +110,15 @@ export default function JobSearchOsCaseStudyPage() {
           </ol>
         </CaseStudySection>
 
-        <CaseStudySection section={section("system-architecture")} tone="dark">
+        <CaseStudySection
+          section={section("system-architecture")}
+          tone="accent"
+        >
           <ProductArchitectureFigure
             groups={caseStudy.architecture}
             caption={caseStudy.architectureCaption}
           />
+          <ProjectVisual {...projectMedia.jobArchitecture} />
         </CaseStudySection>
 
         <CaseStudySection
@@ -122,6 +129,7 @@ export default function JobSearchOsCaseStudyPage() {
             features={caseStudy.ingestionFeatures}
             label="Job ingestion capabilities"
           />
+          <ProjectVisual {...projectMedia.jobExtension} />
           <div className="supported-sources">
             <p>Confirmed extraction coverage</p>
             <ul>
@@ -141,6 +149,7 @@ export default function JobSearchOsCaseStudyPage() {
             features={caseStudy.inboxFeatures}
             label="Import Inbox capabilities"
           />
+          <ProjectVisual {...projectMedia.jobImportInbox} />
         </CaseStudySection>
 
         <CaseStudySection
@@ -152,6 +161,7 @@ export default function JobSearchOsCaseStudyPage() {
             features={caseStudy.scoring.features}
             label="Fit score and evidence capabilities"
           />
+          <ProjectVisual {...projectMedia.jobScoring} />
           <aside className="calibration-note" aria-label="Calibration note">
             <p>Current calibration finding</p>
             <p>{caseStudy.scoring.calibrationNote}</p>
@@ -166,6 +176,7 @@ export default function JobSearchOsCaseStudyPage() {
             features={caseStudy.persistenceFeatures}
             label="Tracker and persistence capabilities"
           />
+          <ProjectVisual {...projectMedia.jobTracker} />
           <div className="product-lifecycle">
             <p>Local record lifecycle</p>
             <ol>
@@ -209,7 +220,7 @@ export default function JobSearchOsCaseStudyPage() {
           </p>
         </CaseStudySection>
 
-        <CaseStudySection section={section("human-review")} tone="dark">
+        <CaseStudySection section={section("human-review")} tone="accent">
           <HumanReviewWorkflow boundary={caseStudy.humanBoundary} />
           <ol className="human-review-steps">
             {caseStudy.humanWorkflow.map((step) => (
@@ -246,6 +257,7 @@ export default function JobSearchOsCaseStudyPage() {
             items={caseStudy.currentCapabilities}
             groupLabel="Current product capabilities"
           />
+          <ProjectVisual {...projectMedia.jobEvidence} />
         </CaseStudySection>
 
         <CaseStudySection section={section("limitations")}>

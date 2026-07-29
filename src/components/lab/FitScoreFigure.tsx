@@ -6,7 +6,7 @@ export function FitScoreFigure({ flow }: { flow: readonly string[] }) {
       className="fit-score-figure"
       label="FIT SCORE / EVIDENCE MODEL / FIG. 03"
       title="A configurable prioritization flow that keeps requirements, evidence, gaps, and warnings inspectable."
-      tone="dark"
+      tone="technical"
     >
       <div className="fit-score-figure__flow">
         {flow.map((step, index) => (

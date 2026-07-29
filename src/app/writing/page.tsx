@@ -22,9 +22,11 @@ export default function WritingPage() {
   return (
     <main className="writing-page" id="top" tabIndex={-1}>
       <header className="writing-page__header" data-reveal="introduction">
-        <p className="writing-page__marker">WRITING / 01</p>
+        <p className="writing-page__marker">RAW TO RELIABLE / WRITING / 01</p>
         <div className="writing-page__introduction">
-          <p className="eyebrow">ENGINEERING NOTES / DEBUGGING RECORDS</p>
+          <p className="eyebrow">
+            RAW TO RELIABLE / ENGINEERING NOTES / DEBUGGING RECORDS
+          </p>
           <h1>Engineering Notes</h1>
           <p className="writing-page__statement">
             Notes from building, debugging, and understanding data systems.

@@ -36,17 +36,20 @@ const metadataBase = getSiteUrl();
 
 export const metadata: Metadata = {
   metadataBase,
-  title: `${siteConfig.name} | ${siteConfig.title}`,
+  title: {
+    default: `${siteConfig.brand} — ${siteConfig.name}`,
+    template: `%s | ${siteConfig.brand}`,
+  },
   description: siteConfig.description,
-  applicationName: `${siteConfig.name} Portfolio`,
+  applicationName: `${siteConfig.brand} by ${siteConfig.name}`,
   authors: [{ name: siteConfig.name }],
   creator: siteConfig.name,
   openGraph: {
     type: "website",
     locale: "en_US",
-    title: `${siteConfig.name} | ${siteConfig.title}`,
+    title: `${siteConfig.brand} — ${siteConfig.name}`,
     description: siteConfig.description,
-    siteName: `${siteConfig.name} Portfolio`,
+    siteName: `${siteConfig.brand} by ${siteConfig.name}`,
   },
 };
 

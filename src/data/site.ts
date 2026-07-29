@@ -7,17 +7,20 @@ import type {
 } from "@/types/content";
 
 export const siteConfig = {
+  brand: "RAW TO RELIABLE",
+  attribution: "by Lee Yao",
   name: "Lee Yao",
   title: "Data Engineer & Analytics Systems Builder",
-  mobileTitle: "Data Engineer",
   headline:
-    "I build reliable data systems that turn fragmented information into usable decisions.",
+    "I turn fragmented inputs into validated systems and decision-ready data.",
   supportingCopy:
-    "Data engineering, analytics architecture, and practical automation using Python, SQL, Snowflake, dbt, and modern orchestration tools.",
+    "Reliable pipelines, tested models, and analytics-ready outputs built with Python, SQL, Snowflake, dbt, and modern orchestration.",
+  transformationLine:
+    "Raw inputs → Validated systems → Trusted decisions",
   location: "Based in New York.",
   technologyLine: "Python / SQL / Snowflake / dbt / Airflow",
   description:
-    "New York-based data engineer building reliable data platforms, analytics systems, and practical automation with Python, SQL, Snowflake, dbt, and Airflow.",
+    "Raw to Reliable is Lee Yao’s data engineering portfolio: reliable pipelines, validated models, analytics systems, and practical automation built for trusted decisions.",
 } as const;
 
 export const navigation: readonly NavItem[] = [

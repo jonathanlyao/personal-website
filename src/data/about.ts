@@ -1,6 +1,8 @@
 export const aboutPage = {
   eyebrow: "ABOUT / ENGINEERING PRACTICE",
   title: "I build data systems that make complex information usable.",
+  brandPrinciple:
+    "Raw to Reliable is the principle behind my work: preserve source context, validate what changes, and make every output useful at the point of decision.",
   supportingStatement:
     "I work across data engineering, analytics engineering, and business intelligence—building pipelines, models, quality controls, and reporting systems that turn fragmented operational data into reliable analytical outputs.",
   metadata: {

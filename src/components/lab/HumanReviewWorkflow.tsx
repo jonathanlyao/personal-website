@@ -25,7 +25,7 @@ export function HumanReviewWorkflow({
       className="human-review-figure"
       label="HUMAN REVIEW / AUTOMATION BOUNDARY / FIG. 04"
       title="Automation prepares. The user verifies. The user decides. The user submits."
-      tone="dark"
+      tone="technical"
     >
       <div className="human-review-figure__lanes">
         {lanes.map((lane) => (
