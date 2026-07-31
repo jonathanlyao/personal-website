@@ -166,6 +166,7 @@ export default function JobSearchOsCaseStudyPage() {
             <p>Current calibration finding</p>
             <p>{caseStudy.scoring.calibrationNote}</p>
           </aside>
+          <ProjectVisual {...projectMedia.jobProfile} />
         </CaseStudySection>
 
         <CaseStudySection

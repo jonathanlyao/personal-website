@@ -18,9 +18,14 @@
   --color-brand-hover: #294f70;
   --color-brand-soft: #dce7ef;
   --color-brand-surface: #eaf1f5;
+  --color-action-primary: #315e8c;
+  --color-action-primary-hover: #24496e;
+  --color-action-on-primary: #ffffff;
+  --color-action-secondary-surface: rgba(49, 94, 140, 0.08);
+  --color-action-shadow: rgba(22, 32, 43, 0.14);
   --color-accent-secondary: #b66a3c;
   --color-accent-secondary-strong: #8f4e2b;
-  --color-focus: #315f85;
+  --color-focus: var(--color-action-primary);
   --color-selection: #234765;
   --color-ink: #17212b;
   --color-text-inverse: #f7f8f8;
@@ -58,6 +63,28 @@
   --font-display-tracking-title: -0.04em;
   --font-display-tracking-section: -0.03em;
   --font-display-tracking-project: -0.025em;
+  --type-display-xl: clamp(3.5rem, 4.6vw, 4.75rem);
+  --type-display-lg: clamp(3.1rem, 4.15vw, 4.5rem);
+  --type-display-md: clamp(2.4rem, 3.15vw, 3.5rem);
+  --type-section-xl: clamp(2.25rem, 2.8vw, 3rem);
+  --type-section-lg: clamp(2rem, 2.5vw, 2.75rem);
+  --type-heading-lg: clamp(1.75rem, 2.2vw, 2.5rem);
+  --type-heading-md: clamp(1.5rem, 2.1vw, 2.125rem);
+  --type-body-lg: clamp(1.2rem, 1.45vw, 1.4rem);
+  --type-body-md: clamp(1rem, 0.92rem + 0.25vw, 1.125rem);
+  --type-body-sm: 0.875rem;
+  --type-label: 0.75rem;
+  --type-mono-label: 0.65rem;
+  --leading-display-xl: 0.98;
+  --leading-display-lg: 1.02;
+  --leading-display-md: 1.08;
+  --leading-section-xl: 1.08;
+  --leading-section-lg: 1.12;
+  --leading-heading-lg: 1.2;
+  --leading-heading-md: 1.25;
+  --leading-body-lg: 1.6;
+  --leading-body-md: 1.7;
+  --leading-body-sm: 1.65;
   --page-width: 1320px;
   --page-gutter: clamp(1rem, 4vw, 3.25rem);
   --rail-width: 118px;
@@ -73,6 +100,18 @@
   --motion-duration-enter: 600ms;
   --motion-easing: cubic-bezier(0.22, 1, 0.36, 1);
   --interaction-focus: var(--color-focus);
+}
+
+@media (max-width: 640px) {
+  :root {
+    --type-display-xl: clamp(2.625rem, 10.75vw, 3.5rem);
+    --type-display-lg: clamp(2.4rem, 10.25vw, 3.25rem);
+    --type-display-md: clamp(2.2rem, 9vw, 2.75rem);
+    --type-section-xl: clamp(2.1rem, 8.6vw, 2.65rem);
+    --type-section-lg: clamp(2rem, 8.25vw, 2.5rem);
+    --type-heading-lg: clamp(1.75rem, 7.4vw, 2.25rem);
+    --type-heading-md: clamp(1.5rem, 6.4vw, 1.9rem);
+  }
 }
 
 * {
@@ -203,7 +242,7 @@ main {
 .eyebrow {
   color: var(--color-teal);
   font-family: var(--font-mono), "SFMono-Regular", Consolas, monospace;
-  font-size: 0.68rem;
+  font-size: var(--type-mono-label);
   font-weight: 600;
   letter-spacing: 0.12em;
   line-height: 1.4;
@@ -348,7 +387,7 @@ main {
 .section-heading__label {
   max-width: 9ch;
   font-family: var(--font-mono), "SFMono-Regular", Consolas, monospace;
-  font-size: 0.66rem;
+  font-size: var(--type-mono-label);
   font-weight: 600;
   letter-spacing: 0.08em;
   line-height: 1.35;
@@ -394,10 +433,10 @@ main {
   max-width: 740px;
   margin-top: 1.1rem;
   font-family: var(--font-display), "Avenir Next", "Segoe UI", sans-serif;
-  font-size: clamp(3.25rem, 3.75vw, 4.25rem);
+  font-size: var(--type-display-xl);
   font-weight: var(--font-display-weight-hero);
   letter-spacing: var(--font-display-tracking-hero);
-  line-height: 0.98;
+  line-height: var(--leading-display-xl);
   text-wrap: balance;
 }
 
@@ -405,8 +444,8 @@ main {
   max-width: 54ch;
   margin-top: 1.35rem;
   color: var(--color-slate);
-  font-size: clamp(0.95rem, 1.3vw, 1.08rem);
-  line-height: 1.7;
+  font-size: var(--type-body-md);
+  line-height: var(--leading-body-md);
   text-wrap: pretty;
 }
 
@@ -415,7 +454,7 @@ main {
   gap: 0.35rem;
   margin-top: 1.15rem;
   font-family: var(--font-mono), "SFMono-Regular", Consolas, monospace;
-  font-size: 0.72rem;
+  font-size: var(--type-label);
   letter-spacing: 0.025em;
 }
 
@@ -436,14 +475,16 @@ main {
   border: 1px solid var(--color-carbon);
   border-radius: var(--radius-sm);
   font-family: var(--font-body), "Segoe UI", Arial, sans-serif;
-  font-size: 0.78rem;
+  font-size: var(--type-body-sm);
   font-weight: 600;
   letter-spacing: 0.025em;
   line-height: 1.2;
   transition:
     color var(--motion-duration-fast) var(--motion-easing),
     background-color var(--motion-duration-fast) var(--motion-easing),
-    border-color var(--motion-duration-fast) var(--motion-easing);
+    border-color var(--motion-duration-fast) var(--motion-easing),
+    box-shadow var(--motion-duration-fast) var(--motion-easing),
+    transform var(--motion-duration-fast) var(--motion-easing);
 }
 
 .editorial-button svg {
@@ -460,40 +501,45 @@ a.editorial-button:focus-visible svg {
 }
 
 .editorial-button--primary {
-  border-color: var(--color-brand);
-  color: var(--color-text-inverse);
-  background: var(--color-brand);
+  border-color: var(--color-action-primary);
+  color: var(--color-action-on-primary);
+  background: var(--color-action-primary);
 }
 
 .editorial-button--primary:hover,
 .editorial-button--primary:focus-visible {
-  border-color: var(--color-brand-hover);
-  background: var(--color-brand-hover);
+  border-color: var(--color-action-primary-hover);
+  color: var(--color-action-on-primary);
+  background: var(--color-action-primary-hover);
+  box-shadow: 0 8px 18px -12px var(--color-action-shadow);
 }
 
 .editorial-button--secondary {
-  color: var(--color-carbon);
+  border-color: var(--color-action-primary);
+  color: var(--color-action-primary);
   background: transparent;
 }
 
 .editorial-button--secondary:hover,
 .editorial-button--secondary:focus-visible {
-  border-color: var(--color-brand);
-  color: var(--color-brand-strong);
-  background: var(--color-brand-surface);
+  border-color: var(--color-action-primary);
+  color: var(--color-action-primary-hover);
+  background: var(--color-action-secondary-surface);
+  box-shadow: 0 8px 18px -14px var(--color-action-shadow);
 }
 
 .editorial-button--light {
-  border-color: var(--color-border-hover);
-  color: var(--color-brand-strong);
+  border-color: var(--color-action-primary);
+  color: var(--color-action-primary);
   background: var(--color-card-background);
 }
 
 .editorial-button--light:hover,
 .editorial-button--light:focus-visible {
-  border-color: var(--color-brand);
-  color: var(--color-brand-strong);
-  background: var(--color-brand-surface);
+  border-color: var(--color-action-primary-hover);
+  color: var(--color-action-primary-hover);
+  background: var(--color-action-secondary-surface);
+  box-shadow: 0 8px 18px -14px var(--color-action-shadow);
 }
 
 .editorial-button--text {
@@ -501,13 +547,19 @@ a.editorial-button:focus-visible svg {
   justify-content: flex-start;
   padding-inline: 0;
   border-color: transparent;
-  color: var(--color-teal);
+  color: var(--color-action-primary);
   background: transparent;
 }
 
 .editorial-button--text:hover,
 .editorial-button--text:focus-visible {
-  color: var(--color-carbon);
+  color: var(--color-action-primary-hover);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .editorial-button:hover {
+    transform: translateY(-2px);
+  }
 }
 
 .figure-frame {
@@ -796,10 +848,10 @@ a.editorial-button:focus-visible svg {
 .lab-feature__lead h2,
 .contact-section__lead h2 {
   font-family: var(--font-display), "Avenir Next", "Segoe UI", sans-serif;
-  font-size: clamp(3rem, 4.2vw, 4.5rem);
+  font-size: var(--type-display-md);
   font-weight: var(--font-display-weight-section);
   letter-spacing: var(--font-display-tracking-section);
-  line-height: 1.04;
+  line-height: var(--leading-display-md);
 }
 
 .section-intro--split {
@@ -935,10 +987,10 @@ a.editorial-button:focus-visible svg {
 .selected-work__intro h2 {
   max-width: 760px;
   font-family: var(--font-display), "Avenir Next", "Segoe UI", sans-serif;
-  font-size: clamp(3rem, 4.5vw, 4.75rem);
+  font-size: var(--type-display-md);
   font-weight: var(--font-display-weight-section);
   letter-spacing: var(--font-display-tracking-section);
-  line-height: 1.04;
+  line-height: var(--leading-display-md);
 }
 
 .selected-work__intro > p:last-child {
@@ -1016,10 +1068,10 @@ a.editorial-button:focus-visible svg {
   max-width: 100%;
   margin-top: 0.8rem;
   font-family: var(--font-display), "Avenir Next", "Segoe UI", sans-serif;
-  font-size: clamp(2.65rem, 3.3vw, 3.75rem);
+  font-size: var(--type-section-xl);
   font-weight: var(--font-display-weight-project);
   letter-spacing: var(--font-display-tracking-project);
-  line-height: 1.05;
+  line-height: var(--leading-section-xl);
   text-wrap: balance;
 }
 
@@ -1572,10 +1624,10 @@ a.editorial-button:focus-visible svg {
 .lab-feature__workflow h3 {
   max-width: 22ch;
   font-family: var(--font-display), "Avenir Next", "Segoe UI", sans-serif;
-  font-size: clamp(2.15rem, 2.8vw, 3rem);
+  font-size: var(--type-section-lg);
   font-weight: var(--font-display-weight-project);
   letter-spacing: var(--font-display-tracking-project);
-  line-height: 1.05;
+  line-height: var(--leading-section-lg);
   text-wrap: balance;
 }
 
@@ -1689,10 +1741,10 @@ a.editorial-button:focus-visible svg {
 .writing-section__intro h2 {
   max-width: 15ch;
   font-family: var(--font-display), "Avenir Next", "Segoe UI", sans-serif;
-  font-size: clamp(3rem, 4.2vw, 4.5rem);
+  font-size: var(--type-display-md);
   font-weight: var(--font-display-weight-section);
   letter-spacing: var(--font-display-tracking-section);
-  line-height: 1.04;
+  line-height: var(--leading-display-md);
   text-wrap: balance;
 }
 
@@ -1756,10 +1808,10 @@ a.editorial-button:focus-visible svg {
 
 .writing-row__main h3 {
   font-family: var(--font-display), "Avenir Next", "Segoe UI", sans-serif;
-  font-size: clamp(1.75rem, 2.25vw, 2.35rem);
+  font-size: var(--type-section-lg);
   font-weight: var(--font-display-weight-project);
   letter-spacing: var(--font-display-tracking-project);
-  line-height: 1.05;
+  line-height: var(--leading-section-lg);
   text-wrap: balance;
 }
 
@@ -1875,7 +1927,8 @@ a.editorial-button:focus-visible svg {
   display: grid;
   grid-template-columns: 160px minmax(0, 1fr);
   gap: clamp(2rem, 5vw, 5rem);
-  padding: clamp(5.5rem, 8vw, 8rem) 0 clamp(4.5rem, 7vw, 6.5rem);
+  padding: clamp(4.5rem, 6vw, 5.75rem) 0
+    clamp(3.5rem, 4.75vw, 4.75rem);
   border-bottom: 1px solid var(--color-archive-line);
 }
 
@@ -1883,7 +1936,7 @@ a.editorial-button:focus-visible svg {
 .writing-index__scope {
   color: var(--color-teal);
   font-family: var(--font-mono), "SFMono-Regular", Consolas, monospace;
-  font-size: 0.65rem;
+  font-size: var(--type-mono-label);
   font-weight: 600;
   letter-spacing: 0.1em;
   line-height: 1.5;
@@ -1896,29 +1949,30 @@ a.editorial-button:focus-visible svg {
 .writing-page__introduction h1 {
   margin-top: 1rem;
   font-family: var(--font-display), "Avenir Next", "Segoe UI", sans-serif;
-  font-size: clamp(4rem, 6vw, 6rem);
+  font-size: var(--type-display-lg);
   font-weight: var(--font-display-weight-title);
   letter-spacing: var(--font-display-tracking-title);
-  line-height: 1;
+  line-height: var(--leading-display-lg);
+  text-wrap: balance;
 }
 
 .writing-page__statement {
   max-width: 26ch;
-  margin-top: 1.5rem;
+  margin-top: 1.3rem;
   font-family: var(--font-display), "Avenir Next", "Segoe UI", sans-serif;
-  font-size: clamp(1.75rem, 3vw, 2.75rem);
+  font-size: var(--type-section-xl);
   font-weight: var(--font-display-weight-section);
   letter-spacing: var(--font-display-tracking-section);
-  line-height: 1.04;
+  line-height: var(--leading-section-xl);
   text-wrap: balance;
 }
 
 .writing-page__description {
   max-width: 68ch;
-  margin-top: 1.4rem;
+  margin-top: 1.15rem;
   color: var(--color-slate);
-  font-size: 0.98rem;
-  line-height: 1.75;
+  font-size: var(--type-body-md);
+  line-height: var(--leading-body-md);
 }
 
 .writing-index {
@@ -1934,7 +1988,7 @@ a.editorial-button:focus-visible svg {
 }
 
 .writing-row--index .writing-row__main h3 {
-  font-size: clamp(2rem, 2.8vw, 3rem);
+  font-size: var(--type-section-xl);
 }
 
 .about-page__header,
@@ -1955,7 +2009,7 @@ a.editorial-button:focus-visible svg {
   padding-top: 0.45rem;
   color: var(--color-teal);
   font-family: var(--font-mono), monospace;
-  font-size: 0.65rem;
+  font-size: var(--type-mono-label);
   font-weight: 600;
   letter-spacing: 0.085em;
   line-height: 1.5;
@@ -1975,13 +2029,13 @@ a.editorial-button:focus-visible svg {
 }
 
 .about-page__introduction h1 {
-  max-width: 14ch;
+  max-width: 19ch;
   margin-top: 1rem;
   font-family: var(--font-display), "Avenir Next", "Segoe UI", sans-serif;
-  font-size: clamp(4rem, 5.8vw, 5.9rem);
+  font-size: var(--type-display-lg);
   font-weight: var(--font-display-weight-title);
   letter-spacing: var(--font-display-tracking-title);
-  line-height: 1;
+  line-height: var(--leading-display-lg);
   text-wrap: balance;
 }
 
@@ -1989,8 +2043,8 @@ a.editorial-button:focus-visible svg {
   max-width: 65ch;
   margin-top: 1.7rem;
   color: var(--color-slate);
-  font-size: clamp(1.08rem, 1.6vw, 1.35rem);
-  line-height: 1.62;
+  font-size: var(--type-body-lg);
+  line-height: var(--leading-body-lg);
   text-wrap: pretty;
 }
 
@@ -2061,10 +2115,10 @@ a.editorial-button:focus-visible svg {
   max-width: 11ch;
   margin-top: 0.8rem;
   font-family: var(--font-display), "Avenir Next", "Segoe UI", sans-serif;
-  font-size: clamp(2.4rem, 3.7vw, 4rem);
+  font-size: var(--type-section-lg);
   font-weight: var(--font-display-weight-section);
   letter-spacing: var(--font-display-tracking-section);
-  line-height: 1.04;
+  line-height: var(--leading-section-lg);
   text-wrap: balance;
 }
 
@@ -2306,7 +2360,7 @@ a.editorial-button:focus-visible svg {
 .contact-section__lead h2 {
   max-width: 900px;
   margin-top: 0.9rem;
-  font-size: clamp(3.25rem, 4.15vw, 3.75rem);
+  font-size: var(--type-display-md);
 }
 
 .contact-methods {
@@ -2474,20 +2528,20 @@ a.editorial-button:focus-visible svg {
 .resume-page__identity h1 {
   margin-top: 1rem;
   font-family: var(--font-display), "Avenir Next", "Segoe UI", sans-serif;
-  font-size: clamp(4.5rem, 7vw, 6.5rem);
+  font-size: var(--type-display-lg);
   font-weight: var(--font-display-weight-title);
   letter-spacing: var(--font-display-tracking-title);
-  line-height: 1;
+  line-height: var(--leading-display-lg);
 }
 
 .resume-page__descriptor {
   max-width: 29ch;
   margin-top: 1.5rem;
   font-family: var(--font-display), "Avenir Next", "Segoe UI", sans-serif;
-  font-size: clamp(1.3rem, 2.2vw, 1.8rem);
+  font-size: var(--type-heading-md);
   font-weight: var(--font-display-weight-section);
   letter-spacing: var(--font-display-tracking-section);
-  line-height: 1.04;
+  line-height: var(--leading-heading-md);
   text-wrap: balance;
 }
 
@@ -2843,7 +2897,8 @@ a.editorial-button:focus-visible svg {
   display: grid;
   grid-template-columns: 150px minmax(0, 1fr);
   gap: clamp(2rem, 5vw, 5rem);
-  padding: clamp(5rem, 7vw, 7rem) 0 clamp(4rem, 6vw, 5.5rem);
+  padding: clamp(4.5rem, 6vw, 5.75rem) 0
+    clamp(3.5rem, 4.75vw, 4.75rem);
   border-bottom: 1px solid var(--color-archive-line);
 }
 
@@ -2864,7 +2919,7 @@ a.editorial-button:focus-visible svg {
 .work-page__marker {
   padding-top: 0.45rem;
   color: var(--color-teal);
-  font-size: 0.65rem;
+  font-size: var(--type-mono-label);
   line-height: 1.5;
 }
 
@@ -2876,30 +2931,30 @@ a.editorial-button:focus-visible svg {
   max-width: 14ch;
   margin-top: 1rem;
   font-family: var(--font-display), "Avenir Next", "Segoe UI", sans-serif;
-  font-size: clamp(4rem, 5.7vw, 5.75rem);
+  font-size: var(--type-display-lg);
   font-weight: var(--font-display-weight-title);
   letter-spacing: var(--font-display-tracking-title);
-  line-height: 1;
+  line-height: var(--leading-display-lg);
   text-wrap: balance;
 }
 
 .work-page__statement {
   max-width: 48ch;
-  margin-top: 1.6rem;
+  margin-top: 1.35rem;
   font-family: var(--font-display), "Avenir Next", "Segoe UI", sans-serif;
-  font-size: clamp(1.5rem, 2.3vw, 2.25rem);
+  font-size: var(--type-heading-md);
   font-weight: var(--font-display-weight-section);
   letter-spacing: var(--font-display-tracking-section);
-  line-height: 1.04;
+  line-height: var(--leading-heading-md);
   text-wrap: balance;
 }
 
 .work-page__description {
   max-width: 70ch;
-  margin-top: 1.35rem;
+  margin-top: 1.15rem;
   color: var(--color-slate);
-  font-size: 0.95rem;
-  line-height: 1.75;
+  font-size: var(--type-body-md);
+  line-height: var(--leading-body-md);
   text-wrap: pretty;
 }
 
@@ -2907,7 +2962,7 @@ a.editorial-button:focus-visible svg {
   display: grid;
   max-width: 840px;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  margin: 2.4rem 0 0;
+  margin: 2.1rem 0 0;
   border-top: 1px solid var(--color-archive-line);
   border-bottom: 1px solid var(--color-archive-line);
 }
@@ -3045,10 +3100,10 @@ a.editorial-button:focus-visible svg {
 .registry-project__main h2 {
   max-width: 18ch;
   font-family: var(--font-display), "Avenir Next", "Segoe UI", sans-serif;
-  font-size: clamp(2.35rem, 3.5vw, 3.65rem);
+  font-size: var(--type-section-xl);
   font-weight: var(--font-display-weight-project);
   letter-spacing: var(--font-display-tracking-project);
-  line-height: 1.05;
+  line-height: var(--leading-section-xl);
   overflow-wrap: break-word;
   text-wrap: balance;
 }
@@ -3495,8 +3550,8 @@ a.editorial-button:focus-visible svg {
 
   .hero-copy h1 {
     max-width: 100%;
-    font-size: clamp(2.65rem, 11vw, 3.75rem);
-    line-height: 1;
+    font-size: var(--type-display-xl);
+    line-height: var(--leading-display-xl);
   }
 
   .section-intro h2,
@@ -3504,12 +3559,15 @@ a.editorial-button:focus-visible svg {
   .writing-section__intro h2,
   .selected-work__intro h2,
   .contact-section__lead h2 {
-    font-size: clamp(2.25rem, 10vw, 3.25rem);
+    font-size: var(--type-display-md);
   }
 
-  .project-feature__copy h3,
+  .project-feature__copy h3 {
+    font-size: var(--type-section-xl);
+  }
+
   .lab-feature__workflow h3 {
-    font-size: clamp(2rem, 9vw, 3rem);
+    font-size: var(--type-section-lg);
   }
 
   .project-feature__copy h3 {
@@ -3518,7 +3576,7 @@ a.editorial-button:focus-visible svg {
   }
 
   .hero-copy__support {
-    font-size: 0.95rem;
+    font-size: var(--type-body-md);
   }
 
   .button-group {
@@ -3558,7 +3616,7 @@ a.editorial-button:focus-visible svg {
 
   .writing-row__main h3,
   .writing-row--index .writing-row__main h3 {
-    font-size: clamp(1.75rem, 8vw, 2.35rem);
+    font-size: var(--type-section-lg);
   }
 
   .writing-row__metadata {
@@ -3580,15 +3638,15 @@ a.editorial-button:focus-visible svg {
   }
 
   .writing-page__introduction h1 {
-    font-size: clamp(3rem, 14vw, 4.25rem);
+    font-size: var(--type-display-lg);
   }
 
   .writing-page__statement {
-    font-size: clamp(1.65rem, 8vw, 2.25rem);
+    font-size: var(--type-section-xl);
   }
 
   .writing-page__description {
-    font-size: 0.92rem;
+    font-size: var(--type-body-md);
   }
 
   .writing-index {
@@ -3959,11 +4017,11 @@ a.editorial-button:focus-visible svg {
   }
 
   .resume-page__identity h1 {
-    font-size: clamp(3.6rem, 18vw, 5rem);
+    font-size: var(--type-display-lg);
   }
 
   .resume-page__descriptor {
-    font-size: clamp(1.25rem, 6vw, 1.6rem);
+    font-size: var(--type-heading-md);
   }
 
   .resume-contact dl > div {
@@ -4115,15 +4173,15 @@ a.editorial-button:focus-visible svg {
 
   .work-page__introduction h1 {
     max-width: 100%;
-    font-size: clamp(2.7rem, 11.5vw, 4.25rem);
+    font-size: var(--type-display-lg);
   }
 
   .work-page__statement {
-    font-size: clamp(1.45rem, 7vw, 2rem);
+    font-size: var(--type-heading-md);
   }
 
   .work-page__description {
-    font-size: 0.9rem;
+    font-size: var(--type-body-md);
   }
 
   .work-summary {
@@ -4192,7 +4250,7 @@ a.editorial-button:focus-visible svg {
 
   .registry-project__main h2 {
     max-width: 100%;
-    font-size: clamp(2.1rem, 10.5vw, 3rem);
+    font-size: var(--type-section-xl);
   }
 
   .registry-project__summary {
@@ -4232,7 +4290,8 @@ a.editorial-button:focus-visible svg {
   display: grid;
   grid-template-columns: 126px minmax(0, 1fr);
   gap: 1.5rem clamp(2.5rem, 5vw, 5.25rem);
-  padding: clamp(3.5rem, 6vw, 6rem) 0 clamp(4rem, 6vw, 5.5rem);
+  padding: clamp(3.25rem, 5vw, 4.75rem) 0
+    clamp(3.5rem, 5vw, 4.75rem);
   border-bottom: 1px solid var(--color-carbon);
 }
 
@@ -4274,7 +4333,7 @@ a.editorial-button:focus-visible svg {
   gap: 0.65rem 1.2rem;
   color: var(--color-slate);
   font-family: var(--font-mono), monospace;
-  font-size: 0.62rem;
+  font-size: var(--type-mono-label);
   font-weight: 600;
   letter-spacing: 0.07em;
   line-height: 1.4;
@@ -4309,33 +4368,33 @@ a.editorial-button:focus-visible svg {
 
 .case-study-header__title h1 {
   max-width: 16ch;
-  margin-top: 1rem;
+  margin-top: 0.8rem;
   font-family: var(--font-display), "Avenir Next", "Segoe UI", sans-serif;
-  font-size: clamp(4rem, 6.4vw, 6.5rem);
+  font-size: var(--type-display-lg);
   font-weight: var(--font-display-weight-title);
   letter-spacing: var(--font-display-tracking-title);
-  line-height: 1;
+  line-height: var(--leading-display-lg);
   overflow-wrap: break-word;
   text-wrap: balance;
 }
 
 .case-study-header__summary {
   max-width: 47ch;
-  margin-top: 1.75rem;
+  margin-top: 1.35rem;
   font-family: var(--font-display), "Avenir Next", "Segoe UI", sans-serif;
-  font-size: clamp(1.55rem, 2.35vw, 2.25rem);
+  font-size: var(--type-heading-md);
   font-weight: var(--font-display-weight-section);
   letter-spacing: var(--font-display-tracking-section);
-  line-height: 1.04;
+  line-height: var(--leading-heading-md);
   text-wrap: balance;
 }
 
 .case-study-header__supporting {
   max-width: 72ch;
-  margin-top: 1.35rem;
+  margin-top: 1.1rem;
   color: var(--color-slate);
-  font-size: 0.97rem;
-  line-height: 1.75;
+  font-size: var(--type-body-md);
+  line-height: var(--leading-body-md);
   text-wrap: pretty;
 }
 
@@ -4344,7 +4403,7 @@ a.editorial-button:focus-visible svg {
   flex-wrap: wrap;
   align-items: center;
   gap: 0.8rem 1.25rem;
-  margin-top: 1.5rem;
+  margin-top: 1.25rem;
 }
 
 .case-study-header__status > span:first-child,
@@ -4509,10 +4568,10 @@ a.editorial-button:focus-visible svg {
 .case-study-section__heading h2 {
   max-width: 19ch;
   font-family: var(--font-display), "Avenir Next", "Segoe UI", sans-serif;
-  font-size: clamp(3rem, 4.5vw, 4.75rem);
+  font-size: var(--type-heading-lg);
   font-weight: var(--font-display-weight-section);
   letter-spacing: var(--font-display-tracking-section);
-  line-height: 1.04;
+  line-height: var(--leading-heading-lg);
   text-wrap: balance;
 }
 
@@ -4520,8 +4579,8 @@ a.editorial-button:focus-visible svg {
   max-width: 72ch;
   margin-top: 1.25rem;
   color: var(--color-slate);
-  font-size: 0.94rem;
-  line-height: 1.75;
+  font-size: var(--type-body-md);
+  line-height: var(--leading-body-md);
   text-wrap: pretty;
 }
 
@@ -4529,8 +4588,8 @@ a.editorial-button:focus-visible svg {
   display: grid;
   max-width: 77ch;
   gap: 1.2rem;
-  font-size: clamp(1.02rem, 1.25vw, 1.15rem);
-  line-height: 1.8;
+  font-size: var(--type-body-md);
+  line-height: var(--leading-body-md);
   text-wrap: pretty;
 }
 
@@ -5188,10 +5247,10 @@ a.editorial-button:focus-visible svg {
   max-width: 17ch;
   margin-top: 0.75rem;
   font-family: var(--font-display), "Avenir Next", "Segoe UI", sans-serif;
-  font-size: clamp(2.5rem, 4vw, 4.25rem);
+  font-size: var(--type-section-lg);
   font-weight: var(--font-display-weight-section);
   letter-spacing: var(--font-display-tracking-section);
-  line-height: 1.04;
+  line-height: var(--leading-section-lg);
   text-wrap: balance;
 }
 
@@ -5331,15 +5390,15 @@ a.editorial-button:focus-visible svg {
 
   .case-study-header__title h1 {
     max-width: 100%;
-    font-size: clamp(2.85rem, 14vw, 4.25rem);
+    font-size: var(--type-display-lg);
   }
 
   .case-study-header__summary {
-    font-size: clamp(1.4rem, 7vw, 1.9rem);
+    font-size: var(--type-heading-md);
   }
 
   .case-study-header__supporting {
-    font-size: 0.9rem;
+    font-size: var(--type-body-md);
   }
 
   .case-study-header__details {
@@ -5366,12 +5425,12 @@ a.editorial-button:focus-visible svg {
 
   .case-study-section__heading h2 {
     max-width: 100%;
-    font-size: clamp(2.35rem, 11vw, 3.35rem);
+    font-size: var(--type-heading-lg);
   }
 
   .case-study-prose {
-    font-size: 0.96rem;
-    line-height: 1.75;
+    font-size: var(--type-body-md);
+    line-height: var(--leading-body-md);
   }
 
   .status-ledger__group {
@@ -5475,7 +5534,7 @@ a.editorial-button:focus-visible svg {
   }
 
   .case-study-navigation h2 {
-    font-size: clamp(2.4rem, 11vw, 3.4rem);
+    font-size: var(--type-section-lg);
   }
 
   .case-study-navigation > div:last-child {
@@ -5510,7 +5569,8 @@ a.editorial-button:focus-visible svg {
   display: grid;
   grid-template-columns: 150px minmax(0, 1fr);
   gap: clamp(2rem, 5vw, 5rem);
-  padding: clamp(5rem, 7vw, 7rem) 0 clamp(4rem, 6vw, 5.5rem);
+  padding: clamp(4.5rem, 6vw, 5.75rem) 0
+    clamp(3.5rem, 4.75vw, 4.75rem);
   border-bottom: 1px solid var(--color-archive-line);
 }
 
@@ -5527,7 +5587,7 @@ a.editorial-button:focus-visible svg {
 .lab-page__marker {
   padding-top: 0.45rem;
   color: var(--color-teal);
-  font-size: 0.65rem;
+  font-size: var(--type-mono-label);
   line-height: 1.5;
 }
 
@@ -5539,30 +5599,30 @@ a.editorial-button:focus-visible svg {
   max-width: 16ch;
   margin-top: 1rem;
   font-family: var(--font-display), "Avenir Next", "Segoe UI", sans-serif;
-  font-size: clamp(4rem, 5.7vw, 5.75rem);
+  font-size: var(--type-display-lg);
   font-weight: var(--font-display-weight-title);
   letter-spacing: var(--font-display-tracking-title);
-  line-height: 1;
+  line-height: var(--leading-display-lg);
   text-wrap: balance;
 }
 
 .lab-page__statement {
   max-width: 54ch;
-  margin-top: 1.6rem;
+  margin-top: 1.35rem;
   font-family: var(--font-display), "Avenir Next", "Segoe UI", sans-serif;
-  font-size: clamp(1.5rem, 2.3vw, 2.25rem);
+  font-size: var(--type-heading-md);
   font-weight: var(--font-display-weight-section);
   letter-spacing: var(--font-display-tracking-section);
-  line-height: 1.04;
+  line-height: var(--leading-heading-md);
   text-wrap: balance;
 }
 
 .lab-page__description {
   max-width: 73ch;
-  margin-top: 1.35rem;
+  margin-top: 1.15rem;
   color: var(--color-slate);
-  font-size: 0.95rem;
-  line-height: 1.75;
+  font-size: var(--type-body-md);
+  line-height: var(--leading-body-md);
   text-wrap: pretty;
 }
 
@@ -5570,7 +5630,7 @@ a.editorial-button:focus-visible svg {
   display: grid;
   max-width: 880px;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  margin: 2.4rem 0 0;
+  margin: 2.1rem 0 0;
   border-top: 1px solid var(--color-archive-line);
   border-bottom: 1px solid var(--color-archive-line);
 }
@@ -5701,10 +5761,10 @@ a.editorial-button:focus-visible svg {
   max-width: 14ch;
   margin-top: 0.8rem;
   font-family: var(--font-display), "Avenir Next", "Segoe UI", sans-serif;
-  font-size: clamp(3rem, 4.7vw, 4.8rem);
+  font-size: var(--type-section-xl);
   font-weight: var(--font-display-weight-project);
   letter-spacing: var(--font-display-tracking-project);
-  line-height: 1.05;
+  line-height: var(--leading-section-xl);
 }
 
 .lab-registry-item__main > p:nth-of-type(2) {
@@ -5801,8 +5861,8 @@ a.editorial-button:focus-visible svg {
 .lab-case-study-header {
   display: grid;
   grid-template-columns: 126px minmax(0, 1fr);
-  gap: 1.5rem clamp(2.5rem, 5vw, 5.25rem);
-  padding: clamp(3.5rem, 6vw, 6rem) 0 clamp(4rem, 6vw, 5.5rem);
+  gap: 1.25rem clamp(2.5rem, 5vw, 5.25rem);
+  padding: clamp(3.25rem, 5vw, 5rem) 0 clamp(3.75rem, 5.5vw, 5rem);
   border-bottom: 1px solid var(--color-carbon);
 }
 
@@ -5844,7 +5904,7 @@ a.editorial-button:focus-visible svg {
   gap: 0.65rem 1.2rem;
   color: var(--color-slate);
   font-family: var(--font-mono), monospace;
-  font-size: 0.62rem;
+  font-size: var(--type-mono-label);
   font-weight: 600;
   letter-spacing: 0.07em;
   line-height: 1.4;
@@ -5874,37 +5934,37 @@ a.editorial-button:focus-visible svg {
 }
 
 .lab-case-study-header__title {
-  padding-top: 0.7rem;
+  padding-top: 0.35rem;
 }
 
 .lab-case-study-header__title h1 {
-  max-width: 13ch;
-  margin-top: 1rem;
+  max-width: 14ch;
+  margin-top: 0.8rem;
   font-family: var(--font-display), "Avenir Next", "Segoe UI", sans-serif;
-  font-size: clamp(4.5rem, 7.3vw, 7.25rem);
+  font-size: var(--type-display-lg);
   font-weight: var(--font-display-weight-title);
   letter-spacing: var(--font-display-tracking-title);
-  line-height: 1;
+  line-height: var(--leading-display-lg);
   text-wrap: balance;
 }
 
 .lab-case-study-header__summary {
   max-width: 53ch;
-  margin-top: 1.75rem;
+  margin-top: 1.25rem;
   font-family: var(--font-display), "Avenir Next", "Segoe UI", sans-serif;
-  font-size: clamp(1.55rem, 2.35vw, 2.25rem);
+  font-size: var(--type-heading-md);
   font-weight: var(--font-display-weight-section);
   letter-spacing: var(--font-display-tracking-section);
-  line-height: 1.04;
+  line-height: var(--leading-heading-md);
   text-wrap: balance;
 }
 
 .lab-case-study-header__supporting {
   max-width: 73ch;
-  margin-top: 1.35rem;
+  margin-top: 1.1rem;
   color: var(--color-slate);
-  font-size: 0.97rem;
-  line-height: 1.75;
+  font-size: var(--type-body-md);
+  line-height: var(--leading-body-md);
   text-wrap: pretty;
 }
 
@@ -5913,7 +5973,7 @@ a.editorial-button:focus-visible svg {
   flex-wrap: wrap;
   align-items: center;
   gap: 0.8rem 1.25rem;
-  margin-top: 1.5rem;
+  margin-top: 1.25rem;
 }
 
 .lab-case-study-header__status > span:first-child,
@@ -5929,7 +5989,7 @@ a.editorial-button:focus-visible svg {
 
 .lab-case-study-header blockquote {
   max-width: 50ch;
-  margin: 1.75rem 0 0;
+  margin: 1.5rem 0 0;
   padding-left: 1.2rem;
   border-left: 3px solid var(--color-rust);
   font-family: var(--font-display), "Avenir Next", "Segoe UI", sans-serif;
@@ -6812,7 +6872,7 @@ a.editorial-button:focus-visible svg {
   }
 
   .lab-case-study-header__title {
-    padding-top: 1rem;
+    padding-top: 0.35rem;
   }
 
   .lab-feature-ledger {
@@ -6847,11 +6907,11 @@ a.editorial-button:focus-visible svg {
 
   .lab-page__introduction h1 {
     max-width: 100%;
-    font-size: clamp(2.7rem, 11.5vw, 4.25rem);
+    font-size: var(--type-display-lg);
   }
 
   .lab-page__statement {
-    font-size: clamp(1.45rem, 7vw, 2rem);
+    font-size: var(--type-heading-md);
   }
 
   .lab-summary {
@@ -6904,7 +6964,7 @@ a.editorial-button:focus-visible svg {
 
   .lab-registry-item__main h2 {
     max-width: 100%;
-    font-size: clamp(2.5rem, 12vw, 3.5rem);
+    font-size: var(--type-section-xl);
   }
 
   .lab-registry-item__action .editorial-button,
@@ -6931,15 +6991,16 @@ a.editorial-button:focus-visible svg {
 
   .lab-case-study-header__title h1 {
     max-width: 100%;
-    font-size: clamp(3.5rem, 18vw, 5rem);
+    font-size: var(--type-display-lg);
+    line-height: var(--leading-display-lg);
   }
 
   .lab-case-study-header__summary {
-    font-size: clamp(1.4rem, 7vw, 1.9rem);
+    font-size: var(--type-heading-md);
   }
 
   .lab-case-study-header__supporting {
-    font-size: 0.9rem;
+    font-size: var(--type-body-md);
   }
 
   .lab-case-study-header__details {
@@ -7076,7 +7137,7 @@ a.editorial-button:focus-visible svg {
   }
 
   .about-page__introduction h1 {
-    max-width: 16ch;
+    max-width: 18ch;
   }
 
   .about-page__metadata {
@@ -7125,12 +7186,12 @@ a.editorial-button:focus-visible svg {
 
   .about-page__introduction h1 {
     max-width: 100%;
-    font-size: clamp(3rem, 14vw, 4.25rem);
+    font-size: var(--type-display-lg);
   }
 
   .about-page__statement {
-    font-size: 1rem;
-    line-height: 1.7;
+    font-size: var(--type-body-lg);
+    line-height: var(--leading-body-lg);
   }
 
   .about-page__metadata {
@@ -7156,7 +7217,7 @@ a.editorial-button:focus-visible svg {
   }
 
   .about-section__heading h2 {
-    font-size: clamp(2.25rem, 10vw, 3.25rem);
+    font-size: var(--type-section-lg);
   }
 
   .about-principles,
@@ -7214,10 +7275,10 @@ a.editorial-button:focus-visible svg {
   max-width: 11ch;
   margin-top: 1.3rem;
   font-family: var(--font-display), "Avenir Next", "Segoe UI", sans-serif;
-  font-size: clamp(3.25rem, 6vw, 5.75rem);
+  font-size: var(--type-display-lg);
   font-weight: var(--font-display-weight-title);
   letter-spacing: var(--font-display-tracking-title);
-  line-height: 0.98;
+  line-height: var(--leading-display-lg);
 }
 
 .not-found-page__content > p:not(.eyebrow) {
@@ -7254,7 +7315,7 @@ a.editorial-button:focus-visible svg {
 
 @media (max-width: 640px) {
   .not-found-page__content h1 {
-    font-size: clamp(2.75rem, 13vw, 4rem);
+    font-size: var(--type-display-lg);
   }
 
   .not-found-page__actions {
@@ -7375,24 +7436,6 @@ a.editorial-button:focus-visible svg {
 
 .current-focus .section-heading {
   border-color: color-mix(in srgb, var(--color-brand) 28%, transparent);
-}
-
-.editorial-button--primary {
-  border-color: var(--color-brand);
-  background: var(--color-brand);
-}
-
-.editorial-button--primary:hover,
-.editorial-button--primary:focus-visible {
-  border-color: var(--color-brand-hover);
-  background: var(--color-brand-hover);
-}
-
-.editorial-button--secondary:hover,
-.editorial-button--secondary:focus-visible {
-  border-color: var(--color-brand);
-  color: var(--color-brand-strong);
-  background: var(--color-brand-surface);
 }
 
 .system-flow__unit[data-stage-tone="raw"] .system-flow__node {
@@ -7560,16 +7603,30 @@ a.editorial-button:focus-visible svg {
 }
 
 .about-page__header-grid:has(.about-page__portrait) {
-  grid-template-columns: minmax(0, 1.1fr) minmax(220px, 0.48fr) minmax(
-      220px,
-      0.52fr
-    );
-  gap: clamp(2rem, 4vw, 4rem);
+  grid-template-columns: minmax(0, 1fr) minmax(230px, 250px);
+  grid-template-rows: auto 1fr;
+  gap: 1.5rem clamp(2rem, 4vw, 4rem);
+  align-items: start;
+}
+
+.about-page__header-grid:has(.about-page__portrait)
+  .about-page__introduction {
+  grid-row: 1 / span 2;
 }
 
 .about-page__portrait {
+  grid-column: 2;
+  grid-row: 1;
   align-self: start;
+  justify-self: end;
   margin: 0;
+}
+
+.about-page__header-grid:has(.about-page__portrait) .about-page__metadata {
+  grid-column: 2;
+  grid-row: 2;
+  align-self: start;
+  width: 100%;
 }
 
 .work-summary > div,
@@ -7612,8 +7669,19 @@ a.editorial-button:focus-visible svg {
   }
 
   .about-page__header-grid:has(.about-page__portrait)
+    .about-page__introduction,
+  .about-page__portrait {
+    grid-row: auto;
+  }
+
+  .about-page__portrait {
+    grid-column: 2;
+  }
+
+  .about-page__header-grid:has(.about-page__portrait)
     .about-page__metadata {
     grid-column: 1 / -1;
+    grid-row: auto;
   }
 }
 
@@ -7650,6 +7718,10 @@ a.editorial-button:focus-visible svg {
 
   .about-page__header-grid:has(.about-page__portrait) {
     grid-template-columns: 1fr;
+  }
+
+  .about-page__portrait {
+    grid-column: auto;
   }
 
   .about-page__header-grid:has(.about-page__portrait)
@@ -8042,6 +8114,7 @@ a.editorial-button:focus-visible svg {
   }
 
   .editorial-button svg,
+  .editorial-button,
   .writing-row__title-link svg,
   .about-action-ledger a svg,
   .contact-methods a > svg,

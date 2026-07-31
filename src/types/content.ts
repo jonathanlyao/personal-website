@@ -67,6 +67,8 @@ export type ProjectMedia = {
   fit?: "cover" | "contain";
   tone?: "light" | "dark";
   variant?: "full" | "contained";
+  intrinsicWidth?: number;
+  intrinsicHeight?: number;
 };
 
 export type ProjectCategory =

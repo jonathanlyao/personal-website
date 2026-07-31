@@ -12,6 +12,7 @@ type MediaSlot =
   | "jobArchitecture"
   | "jobImportInbox"
   | "jobScoring"
+  | "jobProfile"
   | "jobTracker"
   | "jobExtension"
   | "jobEvidence";
@@ -22,12 +23,14 @@ type MediaSlot =
  */
 export const projectMedia = {
   aboutPortrait: {
-    alt: "Portrait of Lee Yao",
-    eyebrow: "LEE YAO / DATA ENGINEER",
+    src: "/images/about/lee-yao-portrait.webp",
+    alt: "Lee Yao, Data Engineer and Analytics Systems Builder",
     aspectRatio: "portrait",
     fit: "cover",
     tone: "light",
     variant: "contained",
+    intrinsicWidth: 724,
+    intrinsicHeight: 810,
   },
   secOverview: {
     alt: "SEC Financial Data Platform project overview",
@@ -72,11 +75,16 @@ export const projectMedia = {
     tone: "dark",
   },
   jobOverview: {
-    alt: "Job Search OS product overview",
+    src: "/images/projects/job-search-os/overview.webp",
+    alt: "Job Search OS interface showing the main workspace and job analysis controls.",
+    caption:
+      "Job Search OS workspace for importing, analyzing, and reviewing job opportunities.",
     eyebrow: "PRODUCT OVERVIEW",
-    aspectRatio: "16:10",
-    fit: "cover",
+    aspectRatio: "auto",
+    fit: "contain",
     tone: "light",
+    intrinsicWidth: 1920,
+    intrinsicHeight: 869,
   },
   jobArchitecture: {
     alt: "Job Search OS product architecture",
@@ -93,18 +101,40 @@ export const projectMedia = {
     tone: "light",
   },
   jobScoring: {
-    alt: "Job Search OS evidence-based fit scoring interface",
-    eyebrow: "FIT SCORE / EVIDENCE",
-    aspectRatio: "16:10",
-    fit: "cover",
+    src: "/images/projects/job-search-os/scoring.webp",
+    alt: "Job Search OS scoring interface showing job-fit score, matched requirements, evidence, and skill gaps.",
+    caption:
+      "Role-fit analysis combining an overall score, evidence, skill alignment, and identified gaps.",
+    eyebrow: "FIT ANALYSIS",
+    aspectRatio: "auto",
+    fit: "contain",
     tone: "light",
+    intrinsicWidth: 1920,
+    intrinsicHeight: 869,
+  },
+  jobProfile: {
+    src: "/images/projects/job-search-os/profile.webp",
+    alt: "Job Search OS profile page showing structured candidate experience, skills, and supporting evidence.",
+    caption:
+      "Structured candidate profile used as evidence for repeatable job-fit analysis.",
+    eyebrow: "PROFILE EVIDENCE",
+    aspectRatio: "auto",
+    fit: "contain",
+    tone: "light",
+    intrinsicWidth: 1909,
+    intrinsicHeight: 868,
   },
   jobTracker: {
-    alt: "Job Search OS application tracker",
-    eyebrow: "TRACKER / PERSISTENCE",
-    aspectRatio: "16:10",
-    fit: "cover",
+    src: "/images/projects/job-search-os/application-tracker.webp",
+    alt: "Job Search OS application tracker showing saved roles, companies, scores, status, and tracking fields.",
+    caption:
+      "Centralized tracker for saved roles, fit scores, application status, and follow-up workflow.",
+    eyebrow: "APPLICATION TRACKER",
+    aspectRatio: "auto",
+    fit: "contain",
     tone: "light",
+    intrinsicWidth: 1906,
+    intrinsicHeight: 865,
   },
   jobExtension: {
     alt: "Job Search OS browser extension capture flow",

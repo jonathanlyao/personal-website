@@ -1,8 +1,8 @@
 # Portfolio image map
 
-The site is image-ready, but it does not publish unconfirmed or stand-in
-artwork. Add a real asset at one of the paths below, then add that path as the
-`src` for the matching slot in `src/data/projectMedia.ts`.
+The site publishes only confirmed project evidence and does not use stand-in
+artwork. Add future assets at the documented paths, then add the matching
+`src` in `src/data/projectMedia.ts`.
 
 ## Brand
 
@@ -41,13 +41,11 @@ artwork. Add a real asset at one of the paths below, then add that path as the
 ## Job Search OS
 
 - `/images/projects/job-search-os/overview.webp`
-- `/images/projects/job-search-os/product-architecture.webp`
-- `/images/projects/job-search-os/import-inbox.webp`
 - `/images/projects/job-search-os/scoring.webp`
-- `/images/projects/job-search-os/evidence.webp`
-- `/images/projects/job-search-os/tracker.webp`
-- `/images/projects/job-search-os/browser-extension.webp`
-- `/images/projects/job-search-os/implementation-evidence.webp`
+- `/images/projects/job-search-os/profile.webp`
+- `/images/projects/job-search-os/application-tracker.webp`
+  - These four confirmed product screenshots are integrated into the case
+    study in narrative order.
 
 ## Other documented projects
 

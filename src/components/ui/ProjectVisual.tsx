@@ -4,8 +4,6 @@ import type { ProjectMedia } from "@/types/content";
 export type ProjectVisualProps = ProjectMedia & {
   className?: string;
   sizes?: string;
-  intrinsicWidth?: number;
-  intrinsicHeight?: number;
 };
 
 export function ProjectVisual({
